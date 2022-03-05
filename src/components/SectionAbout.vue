@@ -19,6 +19,7 @@ export default {};
   min-height: 339px;
   background-image: url("@/assets/img/about_bg.jpg");
   background-repeat: no-repeat;
+  background-color: #18356f;
   background-position: center top;
   background-size: cover;
 

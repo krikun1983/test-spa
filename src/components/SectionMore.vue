@@ -3,15 +3,15 @@
     <div class="container">
       <p>
         Также по результатам теста<br />
-        <span>вы получите</span> подробные <span>советы</span> по определению
-        наиболее перспективной <span>для вашего типа </span>
+        <span>вы получите</span> подробные <br /><span>советы</span> по
+        определению наиболее перспективной <span>для вашего типа </span>
         <span class="lower-case">интеллекта</span>
-        <span> сферы деятельности</span>, которая принесет вам скорейший
-        финансовый результат.
+        <span> сферы деятельности</span>, <span></span> которая принесет вам
+        скорейший финансовый результат.
       </p>
       <img src="@/assets/img/brain_areas.png" alt="brain areas" />
-      <router-link to="/test" class="heading__link"
-        ><my-button class="btn-active">Пройти тест</my-button>
+      <router-link to="/test" class="section-more__link">
+        <my-button class="btn-active">Пройти тест</my-button>
       </router-link>
     </div>
   </section>
@@ -30,8 +30,7 @@ export default {};
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 511px;
-    padding: 38px 12px 40px;
+    padding: 38px 12px 36px;
   }
 
   p {
@@ -39,7 +38,7 @@ export default {};
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: calc(1em / 100 * 5);
+    letter-spacing: calc(1em / 100 * 8);
 
     span {
       font-weight: bold;
@@ -52,7 +51,11 @@ export default {};
   }
 
   img {
-    margin-top: 50px;
+    margin-top: 26px;
+  }
+
+  &__link {
+    margin-top: -8px;
   }
 }
 </style>

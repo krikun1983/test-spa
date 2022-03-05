@@ -5,15 +5,23 @@
     <section-about />
     <section-more />
   </main>
+  <footer-section />
 </template>
 
 <script>
+import FooterSection from "./components/FooterSection.vue";
 import HeaderNav from "./components/HeaderNav.vue";
 import SectionAbout from "./components/SectionAbout.vue";
 import SectionHeading from "./components/SectionHeading.vue";
 import SectionMore from "./components/SectionMore.vue";
 export default {
-  components: { HeaderNav, SectionHeading, SectionAbout, SectionMore },
+  components: {
+    HeaderNav,
+    SectionHeading,
+    SectionAbout,
+    SectionMore,
+    FooterSection,
+  },
 };
 </script>
 

@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .btn {
   display: flex;
   align-items: center;
@@ -31,6 +31,13 @@ export default {
 .btn-active {
   background-color: #ffc700;
 }
+
+.btn-active-opacity {
+  color: $white;
+  border: 1px solid $white;
+  background-color: transparent;
+}
+
 .btn-disabled {
   color: #8e8e8e;
   background-color: #dadada;

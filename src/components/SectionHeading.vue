@@ -38,6 +38,7 @@ export default {};
   min-height: 522px;
   color: $white;
   background-image: url("@/assets/img/rain_bk.png");
+  background-color: $bg-images;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;

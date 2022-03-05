@@ -13,3 +13,11 @@
   src: url("@/assets/fonts/Merriweather-Bold.woff2") format("woff2"),
   url("@/assets/fonts/Merriweather-Bold.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Merriweather";
+  font-weight: 900;
+  font-style: black;
+  src: url("@/assets/fonts/Merriweather-Black.woff2") format("woff2"),
+  url("@/assets/fonts/Merriweather-Black.woff") format("woff");
+}
