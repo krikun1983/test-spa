@@ -16,13 +16,19 @@
       <router-link to="/test" class="test__link"
         ><my-button class="btn-active-opacity">Пройти тест</my-button>
       </router-link>
-      <p class="copyright">© 2022</p>
+      <p class="copyright">© {{ dateNow }}</p>
     </div>
   </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      dateNow: new Date().getFullYear(),
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
