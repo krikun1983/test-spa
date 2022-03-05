@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: $mobile;
   overflow-x: hidden;
 }
 
