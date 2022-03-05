@@ -10,9 +10,15 @@
         <img src="@/assets/img/close-icon.svg" alt="close modal" />
       </button>
       <ul class="menu-header">
-        <li><router-link to="/">Главная</router-link></li>
-        <li><router-link to="/about">Информация о тесте</router-link></li>
-        <li><router-link to="/test">Пройти тест</router-link></li>
+        <li @click="setIsModalMenu">
+          <router-link to="/">Главная</router-link>
+        </li>
+        <li @click="setIsModalMenu">
+          <a href="#about">Информация о тесте</a>
+        </li>
+        <li @click="setIsModalMenu">
+          <router-link to="/test">Пройти тест</router-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -120,6 +126,7 @@ export default {
 }
 
 .nav-header-show {
+  right: 0;
   transform: translateX(0);
 }
 </style>

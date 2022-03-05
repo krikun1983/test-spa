@@ -1,26 +1,13 @@
 <template>
   <header-nav />
-  <main>
-    <section-heading />
-    <section-about />
-    <section-more />
-  </main>
-  <footer-section />
+  <router-view></router-view>
 </template>
 
 <script>
 import HeaderNav from "./components/HeaderNav.vue";
-import SectionAbout from "./components/SectionAbout.vue";
-import SectionHeading from "./components/SectionHeading.vue";
-import SectionMore from "./components/SectionMore.vue";
-import FooterSection from "./components/FooterSection.vue";
 export default {
   components: {
     HeaderNav,
-    SectionHeading,
-    SectionAbout,
-    SectionMore,
-    FooterSection,
   },
 };
 </script>
@@ -42,6 +29,10 @@ body {
   padding: 0;
   outline: none;
   box-sizing: inherit;
+}
+
+main {
+  margin-top: 46px;
 }
 
 li {

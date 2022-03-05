@@ -5,10 +5,9 @@
       <h1>Тест на определение IQ</h1>
     </div>
     <div class="heading__bottom">
-      <router-link to="/test" class="heading__link"
-        ><my-button class="btn-active">Пройти тест</my-button>
-      </router-link>
-
+      <my-button class="btn-active" @click="$router.push('/test')">
+        Пройти тест
+      </my-button>
       <p>
         <span
           >И получите рекомендации<br />
@@ -16,7 +15,7 @@
         >
         и улучшению финансового благосостояния и личной жизни
       </p>
-      <a href="#more" class="heading__more">
+      <a href="#about" class="heading__more">
         <img
           src="@/assets/img/more_btn.svg"
           alt="more arrow"
@@ -39,7 +38,6 @@ export default {};
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-top: 46px;
   min-height: 522px;
   color: $white;
   background-image: url("@/assets/img/brain_bk.webp");

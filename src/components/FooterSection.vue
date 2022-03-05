@@ -13,9 +13,9 @@
           любовного.
         </p>
       </div>
-      <router-link to="/test" class="test__link"
-        ><my-button class="btn-active-opacity">Пройти тест</my-button>
-      </router-link>
+      <my-button class="btn-active-opacity" @click="$router.push('/test')">
+        Пройти тест
+      </my-button>
       <p class="copyright">© {{ yearNow }}</p>
     </div>
   </footer>
@@ -71,12 +71,6 @@ export default {
     span {
       font-weight: 700;
     }
-  }
-
-  .test__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .copyright {

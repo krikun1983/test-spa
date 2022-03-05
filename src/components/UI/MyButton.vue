@@ -15,6 +15,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   width: 189px;
   height: 41px;
   font-family: "Merriweather", serif;

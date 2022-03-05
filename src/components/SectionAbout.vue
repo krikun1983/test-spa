@@ -1,5 +1,5 @@
 <template>
-  <section class="about-test" id="more">
+  <section class="about-test" id="about">
     <div class="container">
       <p class="about-test__text">
         Профессиональный <br />IQ-тест позволяет не только определить

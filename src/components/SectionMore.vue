@@ -10,9 +10,11 @@
         скорейший финансовый результат.
       </p>
       <img src="@/assets/img/brain_areas.webp" alt="brain areas" />
-      <router-link to="/test" class="section-more__link">
-        <my-button class="btn-active">Пройти тест</my-button>
-      </router-link>
+      <div class="section-more__link">
+        <my-button class="btn-active" @click="$router.push('/test')">
+          Пройти тест
+        </my-button>
+      </div>
     </div>
   </section>
 </template>
