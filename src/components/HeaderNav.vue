@@ -12,14 +12,14 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   min-height: 46px;
-  background-color: #181818;
+  background-color: $bg-header;
 }
 
 .burger {

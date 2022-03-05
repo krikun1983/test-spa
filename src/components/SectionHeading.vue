@@ -33,7 +33,7 @@ export default {};
   align-items: center;
   margin-top: 46px;
   min-height: 522px;
-  color: #ffffff;
+  color: $white;
   background-image: url("@/assets/img/rain_bk.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -56,7 +56,7 @@ export default {};
     text-align: center;
     text-transform: uppercase;
     letter-spacing: calc(1em / 100 * 3);
-    color: #ffc700;
+    color: $accent;
   }
 
   &__bottom > button {
@@ -74,7 +74,7 @@ export default {};
     letter-spacing: calc(1em / 100 * 5);
 
     span {
-      color: #ffc700;
+      color: $accent;
     }
   }
 
@@ -99,7 +99,7 @@ export default {};
       font-size: 8px;
       line-height: 10.6px;
       letter-spacing: calc(1em / 100 * 5);
-      color: #ffffff;
+      color: $white;
       text-decoration: none;
     }
   }
