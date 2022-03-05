@@ -3,6 +3,7 @@
   <main>
     <section-heading />
     <section-about />
+    <section-more />
   </main>
 </template>
 
@@ -10,8 +11,9 @@
 import HeaderNav from "./components/HeaderNav.vue";
 import SectionAbout from "./components/SectionAbout.vue";
 import SectionHeading from "./components/SectionHeading.vue";
+import SectionMore from "./components/SectionMore.vue";
 export default {
-  components: { HeaderNav, SectionHeading, SectionAbout },
+  components: { HeaderNav, SectionHeading, SectionAbout, SectionMore },
 };
 </script>
 
