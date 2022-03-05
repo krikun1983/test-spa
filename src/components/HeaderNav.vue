@@ -39,6 +39,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 3;
   min-height: 46px;
   background-color: $bg-header;
 }
@@ -49,7 +50,7 @@ export default {
   left: 15px;
   width: 24px;
   height: 16px;
-  z-index: 1;
+  z-index: 4;
   cursor: pointer;
 }
 @media (min-width: 1200px) {

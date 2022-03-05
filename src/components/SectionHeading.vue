@@ -16,10 +16,15 @@
         >
         и улучшению финансового благосостояния и личной жизни
       </p>
-      <div class="heading__more">
-        <button />
-        <a href="#" class="heading__more">Подробнее</a>
-      </div>
+      <a href="#more" class="heading__more">
+        <img
+          src="@/assets/img/more_btn.svg"
+          alt="more arrow"
+          width="16"
+          height="16"
+        />
+        <span>Подробнее</span>
+      </a>
     </div>
   </section>
 </template>
@@ -37,7 +42,7 @@ export default {};
   margin-top: 46px;
   min-height: 522px;
   color: $white;
-  background-image: url("@/assets/img/rain_bk.png");
+  background-image: url("@/assets/img/brain_bk.webp");
   background-color: $bg-images;
   background-repeat: no-repeat;
   background-position: center top;
@@ -91,18 +96,9 @@ export default {};
     flex-direction: column;
     align-items: center;
     margin: 16px 0 6px;
+    cursor: pointer;
 
-    button {
-      width: 16px;
-      height: 16px;
-      border: none;
-      border-radius: 50%;
-      background-image: url("@/assets/img/more_btn.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      cursor: pointer;
-    }
-    a {
+    span {
       margin-top: 4px;
       font-size: 8px;
       line-height: 10.6px;

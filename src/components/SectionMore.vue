@@ -9,7 +9,7 @@
         <span> сферы деятельности</span>, <span></span> которая принесет вам
         скорейший финансовый результат.
       </p>
-      <img src="@/assets/img/brain_areas.png" alt="brain areas" />
+      <img src="@/assets/img/brain_areas.webp" alt="brain areas" />
       <router-link to="/test" class="section-more__link">
         <my-button class="btn-active">Пройти тест</my-button>
       </router-link>

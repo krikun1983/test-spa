@@ -1,5 +1,5 @@
 <template>
-  <section class="about-test">
+  <section class="about-test" id="more">
     <div class="container">
       <p class="about-test__text">
         Профессиональный <br />IQ-тест позволяет не только определить
@@ -17,7 +17,7 @@ export default {};
 <style lang="scss" scoped>
 .about-test {
   min-height: 339px;
-  background-image: url("@/assets/img/about_bg.jpg");
+  background-image: url("@/assets/img/about_bg.webp");
   background-repeat: no-repeat;
   background-color: #18356f;
   background-position: center top;

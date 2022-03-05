@@ -16,7 +16,7 @@
       <router-link to="/test" class="test__link"
         ><my-button class="btn-active-opacity">Пройти тест</my-button>
       </router-link>
-      <p class="copyright">© {{ dateNow }}</p>
+      <p class="copyright">© {{ yearNow }}</p>
     </div>
   </footer>
 </template>
@@ -25,7 +25,7 @@
 export default {
   data() {
     return {
-      dateNow: new Date().getFullYear(),
+      yearNow: new Date().getFullYear(),
     };
   },
 };
@@ -35,7 +35,7 @@ export default {
 .footer {
   min-height: 532px;
   font-family: "Merriweather", serif;
-  background-image: url("@/assets/img/rain_bk2.jpg");
+  background-image: url("@/assets/img/brain_bk_footer.webp");
   background-color: $bg-images;
   background-repeat: no-repeat;
   background-position: center top;

@@ -2,6 +2,7 @@
   font-family: "Yeseva One";
   font-weight: 400;
   font-style: normal;
+  font-display: auto;
   src: url("@/assets/fonts/YesevaOne-Regular.woff2") format("woff2"),
   url("@/assets/fonts/YesevaOne-Regular.woff") format("woff");
 }
@@ -10,6 +11,7 @@
   font-family: "Merriweather";
   font-weight: 700;
   font-style: bold;
+  font-display: auto;
   src: url("@/assets/fonts/Merriweather-Bold.woff2") format("woff2"),
   url("@/assets/fonts/Merriweather-Bold.woff") format("woff");
 }
@@ -17,7 +19,8 @@
 @font-face {
   font-family: "Merriweather";
   font-weight: 900;
-  font-style: black;
+  font-style: bold;
+  font-display: auto;
   src: url("@/assets/fonts/Merriweather-Black.woff2") format("woff2"),
   url("@/assets/fonts/Merriweather-Black.woff") format("woff");
 }
