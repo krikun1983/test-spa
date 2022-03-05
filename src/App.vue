@@ -40,4 +40,8 @@ img {
   max-width: 100%;
   display: block;
 }
+
+a {
+  text-decoration: none;
+}
 </style>

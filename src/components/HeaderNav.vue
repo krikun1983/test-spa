@@ -93,6 +93,7 @@ export default {
     right: 13px;
     border: none;
     background-color: transparent;
+    cursor: pointer;
   }
 
   .menu-header {

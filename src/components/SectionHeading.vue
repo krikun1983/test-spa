@@ -5,7 +5,10 @@
       <h1>Тест на определение IQ</h1>
     </div>
     <div class="heading__bottom">
-      <my-button class="btn-active">Пройти тест</my-button>
+      <router-link to="/test" class="heading__link"
+        ><my-button class="btn-active">Пройти тест</my-button>
+      </router-link>
+
       <p>
         <span
           >И получите рекомендации<br />
@@ -59,8 +62,10 @@ export default {};
     color: $accent;
   }
 
-  &__bottom > button {
-    margin: 0 auto;
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__bottom > p {
