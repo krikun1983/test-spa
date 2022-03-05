@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Yeseva One";
+  font-weight: 400;
+  font-style: normal;
+  src: url("@/assets/fonts/YesevaOne-Regular.woff2") format("woff2"),
+  url("@/assets/fonts/YesevaOne-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-style: bold;
+  src: url("@/assets/fonts/Merriweather-Bold.woff2") format("woff2"),
+  url("@/assets/fonts/Merriweather-Bold.woff") format("woff");
+}

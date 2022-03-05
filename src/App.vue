@@ -2,14 +2,16 @@
   <header-nav />
   <main>
     <section-heading />
+    <section-about />
   </main>
 </template>
 
 <script>
 import HeaderNav from "./components/HeaderNav.vue";
+import SectionAbout from "./components/SectionAbout.vue";
 import SectionHeading from "./components/SectionHeading.vue";
 export default {
-  components: { HeaderNav, SectionHeading },
+  components: { HeaderNav, SectionHeading, SectionAbout },
 };
 </script>
 

@@ -54,8 +54,10 @@ export default {};
   &__top > h1 {
     margin: 16px auto 0;
     width: 80%;
-    font-family: "Yeseva One";
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
     font-size: 30px;
+    line-height: 34.64px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: calc(1em / 100 * 3);
