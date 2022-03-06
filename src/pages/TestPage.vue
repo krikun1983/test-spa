@@ -4,7 +4,19 @@
       <div class="container__layer">
         <progress max="12" :value="questionIndex"></progress>
         <form @submit.prevent class="form">
-          <h3 class="form__heading">{{ questions[questionIndex].heading }}</h3>
+          <h3
+            class="form__heading"
+            :style="{
+              width: (questionIndex === 5 || questionIndex === 6) && '88%',
+              fontSize:
+                ((questionIndex === 5 || questionIndex === 6) && '19px') ||
+                (questionIndex === 8 && '18px') ||
+                (questionIndex === 10 && '16px'),
+              lineHeight: questionIndex === 10 && '21.2px',
+            }"
+          >
+            {{ questions[questionIndex].heading }}
+          </h3>
           <img
             class="form__img"
             v-if="questions[questionIndex].img"
@@ -16,6 +28,7 @@
               'form__list',
               questions[questionIndex].isColor && 'form__colors',
               questions[questionIndex].isBox && 'form__images',
+              questionIndex === 11 && 'question_11',
             ]"
           >
             <template
@@ -54,6 +67,7 @@
                   answers[question.model] === question.value
                     ? 'form__item_active'
                     : '',
+                  questionIndex === 9 && 'question_9',
                 ]"
                 v-else
               >
@@ -380,8 +394,9 @@ export default {
 
   &__heading {
     margin: 0 auto 36px;
-    width: 92%;
+    width: 86%;
     font-size: 20px;
+    font-weight: 400;
     line-height: 26.5px;
     letter-spacing: calc(1em / 100 * 5);
     text-align: center;
@@ -389,7 +404,7 @@ export default {
   }
 
   &__img {
-    margin: 0 auto 23px;
+    margin: 0 auto 47px;
   }
 
   label {
@@ -447,7 +462,7 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    height: 50px;
+    min-height: 50px;
     background-color: rgba(242, 243, 243, 0.15);
 
     input[type="radio"] {
@@ -480,6 +495,29 @@ export default {
         color: $bg-images;
       }
     }
+  }
+  .question_9 {
+    margin-bottom: 19px;
+    padding: 9px 0;
+
+    input[type="radio"] + label::before {
+      content: "";
+      margin-right: 15px;
+    }
+  }
+  .question_11 {
+    position: relative;
+    padding: 0 15px;
+  }
+  .question_11::before {
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 15%;
+    background-color: #f2f3f3;
   }
 }
 </style>
