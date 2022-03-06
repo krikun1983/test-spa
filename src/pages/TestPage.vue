@@ -18,6 +18,7 @@
             >
               <input
                 type="radio"
+                ref="inputs"
                 :id="question.value"
                 :value="question.value"
                 :v-model="question.model"
@@ -91,8 +92,8 @@ export default {
             { id: 2, value: "48", model: "rowOfNumber", label: "48" },
             { id: 3, value: "74", model: "rowOfNumber", label: "74" },
             { id: 4, value: "57", model: "rowOfNumber", label: "57" },
-            { id: 5, value: "60", model: "excess", label: "60" },
-            { id: 6, value: "77", model: "excess", label: "77" },
+            { id: 5, value: "60", model: "rowOfNumber", label: "60" },
+            { id: 6, value: "77", model: "rowOfNumber", label: "77" },
           ],
         },
         5: {
@@ -261,6 +262,7 @@ export default {
   methods: {
     getAnswers() {
       this.questionIndex += 1;
+      this.$refs.inputs.forEach((item) => (item.checked = false));
     },
   },
 };
@@ -322,7 +324,8 @@ export default {
   letter-spacing: calc(1em / 100 * 5);
 
   &__heading {
-    margin-bottom: 36px;
+    margin: 0 auto 36px;
+    width: 92%;
     font-size: 20px;
     line-height: 26.5px;
     letter-spacing: calc(1em / 100 * 5);
@@ -344,9 +347,31 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    padding-left: 35px;
     height: 50px;
     background-color: rgba(242, 243, 243, 0.15);
+
+    input[type="radio"] {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    input[type="radio"] + label::before {
+      content: "";
+      display: inline-block;
+      margin-right: 39px;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $white;
+      border-radius: 20px;
+    }
+
+    input[type="radio"]:checked + label::before {
+      border: 1px solid $bg-images;
+      background-color: #2950c2;
+    }
 
     &_active {
       background-color: $accent;
