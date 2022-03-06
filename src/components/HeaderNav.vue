@@ -4,6 +4,10 @@
       <div class="burger" @click="setIsModalMenu">
         <span class="burger__lines"></span>
       </div>
+      <div :class="[{ hidden: $route.name !== 'test' }, 'heading']">
+        <img src="@/assets/img/brain.webp" alt="brain icon" />
+        <h1>тест на определение IQ</h1>
+      </div>
     </div>
     <nav :class="[{ 'nav-header-show': isModalMenu }, 'nav-header']">
       <button class="modal-close-btn" @click="setIsModalMenu">
@@ -46,7 +50,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 3;
-  min-height: 46px;
+  height: 46px;
   background-color: $bg-header;
 }
 
@@ -54,11 +58,30 @@ export default {
   position: relative;
   top: 23px;
   left: 15px;
-  width: 24px;
-  height: 16px;
   z-index: 4;
   cursor: pointer;
 }
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin-left: 48px;
+
+  img {
+    margin-right: 9px;
+  }
+
+  h1 {
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.86px;
+    letter-spacing: calc(1em / 100 * 5);
+    text-transform: uppercase;
+    color: $accent;
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -128,5 +151,9 @@ export default {
 .nav-header-show {
   right: 0;
   transform: translateX(0);
+}
+
+.hidden {
+  display: none;
 }
 </style>
