@@ -5,10 +5,17 @@
         <progress max="12" :value="questionIndex"></progress>
         <form @submit.prevent class="form">
           <h3 class="form__heading">{{ questions[questionIndex].heading }}</h3>
+          <img
+            class="form__img"
+            v-if="questions[questionIndex].img"
+            :src="require(`@/assets/img/${questions[questionIndex].img}`)"
+            :alt="questions[questionIndex].heading"
+          />
           <ul
             :class="[
               'form__list',
-              questions[questionIndex].isColor && 'form__flex',
+              questions[questionIndex].isColor && 'form__colors',
+              questions[questionIndex].isBox && 'form__images',
             ]"
           >
             <template
@@ -16,16 +23,39 @@
               :key="question.id"
             >
               <li
+                v-if="
+                  question.model === 'colorFirst' ||
+                  question.model === 'colorSecond'
+                "
+                :class="[
+                  'form__color',
+                  answers[question.model] === question.value &&
+                    'form__color-active',
+                ]"
+                :style="{ backgroundColor: question.value }"
+                @click.prevent="this.answers[question.model] = question.value"
+              ></li>
+              <li
+                v-else-if="
+                  question.model === 'figure' || question.model === 'stars'
+                "
+                :class="[
+                  'form__image',
+                  answers[question.model] === question.value &&
+                    'form__image-active',
+                ]"
+                @click.prevent="this.answers[question.model] = question.value"
+              >
+                {{ question.label }}
+              </li>
+              <li
                 :class="[
                   'form__item',
                   answers[question.model] === question.value
                     ? 'form__item_active'
                     : '',
                 ]"
-                v-if="
-                  question.model !== 'colorFirst' &&
-                  question.model !== 'colorSecond'
-                "
+                v-else
               >
                 <input
                   type="radio"
@@ -38,16 +68,6 @@
                 />
                 <label :for="question.value">{{ question.label }}</label>
               </li>
-              <li
-                v-else
-                :class="[
-                  'form__color',
-                  answers[question.model] === question.value &&
-                    'form__color-active',
-                ]"
-                :style="{ backgroundColor: question.value }"
-                @click.prevent="this.answers[question.model] = question.value"
-              ></li>
             </template>
           </ul>
           <my-button
@@ -123,7 +143,7 @@ export default {
           ],
         },
         5: {
-          heading: "Выберите цвет, который сейчас наиболее Вам приятен:",
+          heading: "Выберите цвет, который сейчас наиболее вам приятен:",
           img: "",
           isColor: true,
           isBox: false,
@@ -141,7 +161,7 @@ export default {
         },
         6: {
           heading:
-            "Отдохните пару секунд, еще раз Выберите цвет, который сейчас наиболее Вам приятен:",
+            "Отдохните пару секунд, еще раз выберите цвет, который сейчас наиболее вам приятен:",
           img: "",
           isColor: true,
           isBox: false,
@@ -173,7 +193,7 @@ export default {
         },
         8: {
           heading: "Выберите правильную фигуру из четырёх пронумерованных.",
-          img: "@/assets/img/figure_bg.webp",
+          img: "figure_bg.webp",
           isColor: false,
           isBox: true,
           inputs: [
@@ -212,7 +232,7 @@ export default {
         10: {
           heading:
             "Какое определение, по-Вашему, больше подходит к этому геометрическому изображению:",
-          img: "@/assets/img/geometric_figure_bg.webp",
+          img: "geometric_figure_bg.webp",
           isColor: false,
           isBox: false,
           inputs: [
@@ -238,7 +258,7 @@ export default {
         },
         11: {
           heading: "Вставьте подходящее число",
-          img: "@/assets/img/stars_bg.webp",
+          img: "stars_bg.webp",
           isColor: false,
           isBox: true,
           inputs: [
@@ -368,6 +388,10 @@ export default {
     color: $white;
   }
 
+  &__img {
+    margin: 0 auto 23px;
+  }
+
   label {
     display: flex;
     align-items: center;
@@ -378,7 +402,7 @@ export default {
     color: $white;
   }
 
-  &__flex {
+  &__colors {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -392,6 +416,29 @@ export default {
     }
 
     .form__color-active {
+      border: 6px solid $accent;
+    }
+  }
+
+  &__images {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    .form__image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 41px;
+      height: 44px;
+      font-family: "PT Serif", serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 49px;
+      background-color: $white;
+    }
+
+    .form__image-active {
       border: 6px solid $accent;
     }
   }
