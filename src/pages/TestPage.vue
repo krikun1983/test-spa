@@ -5,28 +5,50 @@
         <progress max="12" :value="questionIndex"></progress>
         <form @submit.prevent class="form">
           <h3 class="form__heading">{{ questions[questionIndex].heading }}</h3>
-          <ul class="form__list">
-            <li
+          <ul
+            :class="[
+              'form__list',
+              questions[questionIndex].isColor && 'form__flex',
+            ]"
+          >
+            <template
               v-for="question in questions[questionIndex].inputs"
-              :class="[
-                'form__item',
-                answers[question.model] === question.value
-                  ? 'form__item_active'
-                  : '',
-              ]"
               :key="question.id"
             >
-              <input
-                type="radio"
-                ref="inputs"
-                :id="question.value"
-                :value="question.value"
-                :v-model="question.model"
-                :name="question.model"
-                @change="answers[question.model] = $event.target.value"
-              />
-              <label :for="question.value">{{ question.label }}</label>
-            </li>
+              <li
+                :class="[
+                  'form__item',
+                  answers[question.model] === question.value
+                    ? 'form__item_active'
+                    : '',
+                ]"
+                v-if="
+                  question.model !== 'colorFirst' &&
+                  question.model !== 'colorSecond'
+                "
+              >
+                <input
+                  type="radio"
+                  ref="inputs"
+                  :id="question.value"
+                  :value="question.value"
+                  :v-model="question.model"
+                  :name="question.model"
+                  @change="answers[question.model] = $event.target.value"
+                />
+                <label :for="question.value">{{ question.label }}</label>
+              </li>
+              <li
+                v-else
+                :class="[
+                  'form__color',
+                  answers[question.model] === question.value &&
+                    'form__color-active',
+                ]"
+                :style="{ backgroundColor: question.value }"
+                @click.prevent="this.answers[question.model] = question.value"
+              ></li>
+            </template>
           </ul>
           <my-button
             :class="[
@@ -54,6 +76,7 @@ export default {
         1: {
           heading: "Ваш пол:",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [
             { id: 1, value: "man", model: "gender", label: "Мужчина" },
@@ -63,6 +86,7 @@ export default {
         2: {
           heading: "Укажите ваш возраст:",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [
             { id: 1, value: "0-17", model: "age", label: "До 18" },
@@ -74,6 +98,7 @@ export default {
         3: {
           heading: "Выберите лишнее:",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [
             { id: 1, value: "house", model: "excess", label: "Дом" },
@@ -86,6 +111,7 @@ export default {
         4: {
           heading: "Продолжите числовой ряд: 18  20  24  32",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [
             { id: 1, value: "62", model: "rowOfNumber", label: "62" },
@@ -99,6 +125,7 @@ export default {
         5: {
           heading: "Выберите цвет, который сейчас наиболее Вам приятен:",
           img: "",
+          isColor: true,
           isBox: false,
           inputs: [
             { id: 1, value: "#a8a8a8", model: "colorFirst", label: "#a8a8a8" },
@@ -116,6 +143,7 @@ export default {
           heading:
             "Отдохните пару секунд, еще раз Выберите цвет, который сейчас наиболее Вам приятен:",
           img: "",
+          isColor: true,
           isBox: false,
           inputs: [
             { id: 1, value: "#a8a8a8", model: "colorSecond", label: "#a8a8a8" },
@@ -132,6 +160,7 @@ export default {
         7: {
           heading: "Какой из городов лишний?",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [
             { id: 1, value: "washington", model: "city", label: "Вашингтон" },
@@ -145,6 +174,7 @@ export default {
         8: {
           heading: "Выберите правильную фигуру из четырёх пронумерованных.",
           img: "@/assets/img/figure_bg.webp",
+          isColor: false,
           isBox: true,
           inputs: [
             { id: 1, value: "1", model: "figure", label: "1" },
@@ -156,6 +186,7 @@ export default {
         9: {
           heading: "Вам привычнее и важнее:",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [
             {
@@ -182,6 +213,7 @@ export default {
           heading:
             "Какое определение, по-Вашему, больше подходит к этому геометрическому изображению:",
           img: "@/assets/img/geometric_figure_bg.webp",
+          isColor: false,
           isBox: false,
           inputs: [
             {
@@ -207,6 +239,7 @@ export default {
         11: {
           heading: "Вставьте подходящее число",
           img: "@/assets/img/stars_bg.webp",
+          isColor: false,
           isBox: true,
           inputs: [
             {
@@ -250,6 +283,7 @@ export default {
         12: {
           heading: "Обработка результатов",
           img: "",
+          isColor: false,
           isBox: false,
           inputs: [],
         },
@@ -318,6 +352,7 @@ export default {
 }
 
 .form {
+  margin-bottom: 25px;
   width: 100%;
   font-family: "PT Serif", serif;
   font-weight: 400;
@@ -341,6 +376,24 @@ export default {
     margin-left: 39px;
     font-size: 18px;
     color: $white;
+  }
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 27px;
+
+    .form__color {
+      margin-bottom: 24px;
+      width: 75px;
+      height: 75px;
+    }
+
+    .form__color-active {
+      border: 6px solid $accent;
+    }
   }
 
   &__item {
