@@ -1,16 +1,21 @@
 <template>
-  <form @submit.prevent class="form">
-    <h3
-      class="form__heading"
-      :style="{
-        width: (questionIndex === 5 || questionIndex === 6) && '88%',
-        fontSize:
-          ((questionIndex === 5 || questionIndex === 6) && '19px') ||
-          (questionIndex === 8 && '18px') ||
-          (questionIndex === 10 && '16px'),
-        lineHeight: questionIndex === 10 && '21.2px',
-      }"
-    >
+  <form
+    @submit.prevent
+    :class="[
+      'form',
+      questionIndex === 2 && 'question_2',
+      questionIndex === 3 && 'question_3',
+      questionIndex === 4 && 'question_4',
+      questionIndex === 5 && 'question_5',
+      questionIndex === 6 && 'question_6',
+      questionIndex === 7 && 'question_7',
+      questionIndex === 8 && 'question_8',
+      questionIndex === 9 && 'question_9',
+      questionIndex === 10 && 'question_10',
+      questionIndex === 11 && 'question_11',
+    ]"
+  >
+    <h3 class="form__heading">
       {{ questions[questionIndex].heading }}
     </h3>
     <img
@@ -24,7 +29,6 @@
         'form__list',
         questions[questionIndex].isColor && 'form__colors',
         questions[questionIndex].isBox && 'form__images',
-        questionIndex === 11 && 'question_11',
       ]"
     >
       <template
@@ -56,7 +60,6 @@
           :class="[
             'form__item',
             answer.value === question.value ? 'form__item_active' : '',
-            questionIndex === 9 && 'question_9',
           ]"
           v-else
         >
@@ -119,15 +122,18 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 80px;
   width: 100%;
+  min-height: 522px;
   font-family: "PT Serif", serif;
   font-weight: 400;
   letter-spacing: calc(1em / 100 * 5);
 
   &__heading {
-    margin: 0 auto;
-    margin-bottom: max(36px);
+    margin: 0 auto 40px;
     width: 86%;
     font-size: 20px;
     font-weight: 400;
@@ -146,8 +152,9 @@ export default {
     align-items: center;
     width: 100%;
     min-height: 50px;
-    margin-left: 39px;
+    margin-left: 34px;
     font-size: 18px;
+    letter-spacing: calc(1em / 100 * 5);
     color: $white;
   }
 
@@ -231,22 +238,138 @@ export default {
     }
   }
 
-  .question_9 {
+  .btn-test {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+  }
+}
+
+.question_2 {
+  padding-bottom: 30px;
+
+  .form__heading {
+    margin-bottom: 51px;
+  }
+}
+.question_3 {
+  padding-bottom: 22px;
+
+  .form__heading {
+    margin-bottom: 45px;
+  }
+}
+.question_4 {
+  padding-bottom: 28px;
+
+  .form__heading {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 31px;
+  }
+  .form__item {
+    margin-bottom: 9px;
+    min-height: 40px;
+  }
+  label {
+    min-height: 40px;
+  }
+}
+.question_5 {
+  padding-bottom: 20px;
+
+  .form__heading {
+    margin-bottom: 33px;
+    width: 82%;
+    font-size: 19px;
+    line-height: 23px;
+  }
+}
+.question_6 {
+  padding-bottom: 26px;
+
+  .form__heading {
+    margin-bottom: 16px;
+    width: 82%;
+    font-size: 19px;
+    line-height: 23px;
+  }
+}
+.question_7 {
+  padding-bottom: 16px;
+
+  .form__heading {
+    margin-bottom: 24px;
+    width: 72%;
+  }
+  .form__item {
+    margin-bottom: 9px;
+    min-height: 40px;
+  }
+  label {
+    min-height: 40px;
+  }
+}
+.question_8 {
+  padding-bottom: 52px;
+
+  .form__heading {
+    margin-bottom: 26px;
+    width: 82%;
+    font-size: 18px;
+    line-height: 23.85px;
+  }
+  .form__images {
+    padding: 0 36px;
+  }
+  .form__img {
+    margin-bottom: 28px;
+  }
+}
+.question_9 {
+  padding-bottom: 30px;
+
+  .form__heading {
+    font-size: 19px;
+    line-height: 25.85px;
+  }
+  .form__item {
     margin-bottom: 19px;
-    padding: 9px 0;
+    min-height: 78px;
 
     input[type="radio"] + label::before {
-      content: "";
-      margin-right: 15px;
+      margin-right: 18px;
     }
   }
-
-  .question_11 {
-    position: relative;
-    padding: 0 15px;
+  label {
+    min-height: 78px;
   }
+}
+.question_10 {
+  padding-bottom: 44px;
 
-  .question_11::before {
+  .form__heading {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 21.2px;
+  }
+  .form__img {
+    margin-bottom: 20px;
+  }
+}
+.question_11 {
+  padding-bottom: 38px;
+
+  .form__heading {
+    margin-bottom: 16px;
+    width: 76%;
+  }
+  .form__images {
+    position: relative;
+    padding: 0 16px;
+  }
+  .form__images::before {
     content: "";
     position: absolute;
     top: -23px;
@@ -256,12 +379,8 @@ export default {
     opacity: 15%;
     background-color: #f2f3f3;
   }
-
-  .btn-test {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 25px;
+  .form__img {
+    margin-bottom: 47px;
   }
 }
 </style>
