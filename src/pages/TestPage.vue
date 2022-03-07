@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import FormQuestion from "@/components/FormQuestion.vue";
-import ProgressLine from "@/components/ProgressLine.vue";
+import FormQuestion from "@/components/test-page/FormQuestion.vue";
+import ProgressLine from "@/components/test-page/ProgressLine.vue";
 export default {
   components: { FormQuestion, ProgressLine },
   data() {

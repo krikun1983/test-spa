@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import SectionHeading from "@/components/SectionHeading.vue";
-import SectionAbout from "@/components/SectionAbout.vue";
-import SectionMore from "@/components/SectionMore.vue";
-import FooterSection from "@/components/FooterSection.vue";
+import SectionHeading from "@/components/main-page/HeadingSection.vue";
+import SectionAbout from "@/components/main-page/AboutSection.vue";
+import SectionMore from "@/components/main-page/MoreSection.vue";
+import FooterSection from "@/components/main-page/FooterSection.vue";
 export default {
   components: { SectionHeading, SectionAbout, SectionMore, FooterSection },
 };
