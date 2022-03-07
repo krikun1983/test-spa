@@ -2,7 +2,10 @@
   <main>
     <div class="container">
       <div class="container__layer">
-        <progress max="12" :value="questionIndex"></progress>
+        <progress-line
+          :maxValue="progress.max"
+          :currentValue="progress.value"
+        />
         <form-question :questions="questions" @answer="getAnswerOfForm" />
       </div>
     </div>
@@ -11,11 +14,11 @@
 
 <script>
 import FormQuestion from "@/components/FormQuestion.vue";
+import ProgressLine from "@/components/ProgressLine.vue";
 export default {
-  components: { FormQuestion },
+  components: { FormQuestion, ProgressLine },
   data() {
     return {
-      questionIndex: 1,
       questions: {
         1: {
           heading: "Ваш пол:",
@@ -245,11 +248,15 @@ export default {
         geometric: "",
         stars: "",
       },
+      progress: {
+        max: 12,
+        value: 1,
+      },
     };
   },
   methods: {
     getAnswerOfForm(index, answer) {
-      this.questionIndex = index;
+      this.progress.value = index;
       this.answers[answer.model] = answer.value;
     },
   },
@@ -258,7 +265,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  min-height: 568px;
+  min-height: 522px;
   background-image: url("@/assets/img/brain_bk_footer.webp");
   background-color: $bg-images;
   background-repeat: no-repeat;
@@ -271,37 +278,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 568px;
+    min-height: 522px;
     background-color: rgba(13, 12, 17, 0.728);
-
-    progress {
-      position: absolute;
-      top: 17px;
-      width: 82%;
-      height: 11px;
-      background-color: #949497;
-      border: 0;
-      border-radius: 10.5px;
-    }
-
-    progress::-webkit-progress-bar {
-      width: 100%;
-      background-color: #949497;
-      border-radius: 10px;
-    }
-
-    progress::-webkit-progress-value {
-      width: 100%;
-      background-color: #3bde7c;
-      border-radius: 10px;
-    }
-
-    .btn-test {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 25px;
-    }
   }
 }
 </style>

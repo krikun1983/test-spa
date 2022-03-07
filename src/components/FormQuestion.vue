@@ -126,7 +126,8 @@ export default {
   letter-spacing: calc(1em / 100 * 5);
 
   &__heading {
-    margin: 0 auto 36px;
+    margin: 0 auto;
+    margin-bottom: max(36px);
     width: 86%;
     font-size: 20px;
     font-weight: 400;
@@ -229,6 +230,7 @@ export default {
       }
     }
   }
+
   .question_9 {
     margin-bottom: 19px;
     padding: 9px 0;
@@ -238,10 +240,12 @@ export default {
       margin-right: 15px;
     }
   }
+
   .question_11 {
     position: relative;
     padding: 0 15px;
   }
+
   .question_11::before {
     content: "";
     position: absolute;
@@ -251,6 +255,13 @@ export default {
     height: 4px;
     opacity: 15%;
     background-color: #f2f3f3;
+  }
+
+  .btn-test {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
   }
 }
 </style>
