@@ -36,7 +36,7 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   width: 100%;
-  background-color: #3bde7c;
+  background-color: $interactive;
   border-radius: 10px;
 }
 </style>

@@ -3,10 +3,24 @@
     <div class="container">
       <div class="container__layer">
         <progress-line
+          v-if="progress.value < 13"
           :maxValue="progress.max"
           :currentValue="progress.value"
         />
-        <form-question :questions="questions" @answer="getAnswerOfForm" />
+        <form-question
+          v-if="progress.value < 12"
+          :questions="questions"
+          @answer="getAnswerOfForm"
+        />
+        <div v-else-if="progress.value === 12" class="loader">
+          <h3 class="loader__heading">Обработка результатов</h3>
+          <my-loader />
+          <p class="loader__text">
+            Определение стиля мышления...............
+            ................................................................
+          </p>
+        </div>
+        <div v-else>Результат</div>
       </div>
     </div>
   </main>
@@ -57,6 +71,13 @@ export default {
       }
     },
   },
+  updated() {
+    if (this.progress.value === 12) {
+      setTimeout(() => {
+        this.progress.value = 13;
+      }, 3000);
+    }
+  },
 };
 </script>
 
@@ -77,6 +98,34 @@ export default {
     justify-content: center;
     min-height: 522px;
     background-color: rgba(13, 12, 17, 0.728);
+  }
+
+  .loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 230px;
+    margin-bottom: 142px;
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    letter-spacing: calc(1em / 100 * 5);
+    color: $white;
+
+    &__heading {
+      margin: 0 auto 33px;
+      width: 70%;
+      font-weight: inherit;
+      font-size: 23px;
+      line-height: 30.47px;
+      text-align: center;
+    }
+    &__text {
+      padding: 0 22px;
+      font-size: 14px;
+      line-height: 18.55px;
+      text-align: justify;
+    }
   }
 }
 </style>
