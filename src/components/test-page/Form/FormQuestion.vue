@@ -181,6 +181,7 @@ export default {
 
   .form__heading {
     margin-bottom: 30px;
+    width: 74%;
     font-size: 20px;
     line-height: 31px;
   }
