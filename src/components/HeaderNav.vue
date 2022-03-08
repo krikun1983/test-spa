@@ -120,7 +120,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 5;
   min-width: $mobile;
   min-height: 569px;
   background-color: $bg-header;
