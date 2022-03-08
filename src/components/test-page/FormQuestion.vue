@@ -89,7 +89,7 @@
 export default {
   data() {
     return {
-      questionIndex: 1,
+      questionIndex: 5,
       answer: {
         model: "",
         value: "",
@@ -159,16 +159,15 @@ export default {
   }
 
   &__colors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(75px, 1fr));
+    grid-template-columns: repeat(3, minmax(75px, 1fr));
+    gap: 5vw;
     margin: 0 auto;
-    padding: 0 27px;
 
     .form__color {
-      margin-bottom: 24px;
-      width: 75px;
-      height: 75px;
+      width: 100%;
+      height: 100%;
     }
 
     .form__color-active {
