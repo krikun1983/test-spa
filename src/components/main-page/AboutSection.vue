@@ -16,7 +16,9 @@ export default {};
 
 <style lang="scss" scoped>
 .about-test {
+  height: 100%;
   min-height: 339px;
+  max-height: 339px;
   background-image: url("@/assets/img/about_bg.webp");
   background-repeat: no-repeat;
   background-color: #18356f;
@@ -25,7 +27,7 @@ export default {};
 
   .container {
     width: 100%;
-    min-height: 339px;
+    height: 100%;
     background-image: radial-gradient(
       circle,
       #2950c2 0%,

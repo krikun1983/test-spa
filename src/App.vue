@@ -24,8 +24,7 @@ body {
 
 html,
 body,
-#app,
-main {
+#app {
   height: 100%;
 }
 

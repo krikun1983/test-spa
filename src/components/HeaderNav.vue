@@ -1,5 +1,10 @@
 <template>
-  <header class="header">
+  <header
+    :class="[
+      'header',
+      ($route.name === 'main' || $route.name === 'about') && 'header-fixed',
+    ]"
+  >
     <div class="container">
       <div class="burger" @click="setIsModalMenu">
         <span class="burger__lines"></span>
@@ -50,20 +55,23 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: $bg-header;
+}
+
+.header-fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
-  height: 46px;
-  background-color: $bg-header;
 }
 
 .burger {
-  position: relative;
-  top: 23px;
-  left: 15px;
-  z-index: 4;
   cursor: pointer;
 }
 
@@ -98,6 +106,12 @@ export default {
     margin: 0 auto;
   }
 }
+.burger__lines {
+  position: absolute;
+  top: 23px;
+  left: 15px;
+  z-index: 4;
+}
 .burger__lines,
 .burger__lines::before,
 .burger__lines::after {
@@ -120,6 +134,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 5;
   min-width: $mobile;
   min-height: 569px;
@@ -144,6 +159,8 @@ export default {
     }
 
     a {
+      display: inline-block;
+      width: 100%;
       font-family: "Roboto";
       font-weight: 300;
       font-size: 16px;

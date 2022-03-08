@@ -38,7 +38,7 @@ export default {};
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 522px;
+  height: 522px;
   color: $white;
   background-image: url("@/assets/img/brain_bk.webp");
   background-color: $bg-images;
@@ -93,7 +93,7 @@ export default {};
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 16px 0 6px;
+    margin: 16px 0 12px;
     cursor: pointer;
 
     span {

@@ -122,7 +122,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main {
+  margin-top: 0;
+  padding-top: 46px;
+  height: 100%;
+}
+
 .container {
+  min-height: 522px;
   height: 100%;
   background-image: url("@/assets/img/brain_bk_footer.webp");
   background-color: $bg-images;
@@ -137,6 +144,7 @@ export default {
     align-items: center;
     justify-content: flex-start;
     padding-top: 35px;
+    min-height: 522px;
     height: 100%;
     background-color: rgba(13, 12, 17, 0.728);
   }
