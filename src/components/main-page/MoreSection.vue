@@ -25,7 +25,7 @@ export default {};
 
 <style lang="scss" scoped>
 .section-more {
-  min-height: 511px;
+  height: 526px;
 
   .container {
     display: flex;

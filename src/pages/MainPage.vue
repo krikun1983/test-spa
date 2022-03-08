@@ -3,8 +3,8 @@
     <section-heading />
     <section-about />
     <section-more />
+    <section-footer />
   </main>
-  <section-footer />
 </template>
 
 <script>

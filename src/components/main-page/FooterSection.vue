@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <div class="footer">
     <div class="container">
       <p class="footer-text">
         Прохождение теста займет у вас не более <span>12 минут</span>, а его
@@ -18,7 +18,7 @@
       </my-button>
       <p class="copyright">© {{ yearNow }}</p>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>

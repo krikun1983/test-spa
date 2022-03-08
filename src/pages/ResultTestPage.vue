@@ -129,9 +129,9 @@ main {
 }
 
 .container {
-  min-height: 522px;
+  min-height: 568px;
   height: 100%;
-  background-image: url("@/assets/img/brain_bk_footer.webp");
+  background-image: url("@/assets/img/bk_result.webp");
   background-color: $bg-images;
   background-repeat: no-repeat;
   background-position: center top;
@@ -144,7 +144,7 @@ main {
     align-items: center;
     justify-content: flex-start;
     padding-top: 35px;
-    min-height: 522px;
+    min-height: 568px;
     height: 100%;
     background-color: rgba(13, 12, 17, 0.728);
   }
@@ -251,15 +251,20 @@ main {
 .user {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2vw;
+  row-gap: 1.5vw;
   column-gap: 2vw;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 90%;
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
   }
 
   span {
