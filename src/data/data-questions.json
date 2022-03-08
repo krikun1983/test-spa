@@ -103,10 +103,10 @@
     "isColor": false,
     "isBox": true,
     "inputs": [
-      { "id": 1, "value": "1", "model": "figure", "label": "1" },
-      { "id": 2, "value": "2", "model": "figure", "label": "2" },
-      { "id": 3, "value": "3", "model": "figure", "label": "3" },
-      { "id": 4, "value": "4", "model": "figure", "label": "4" }
+      { "id": 1, "value": "1", "model": "boxImageFigure", "label": "1" },
+      { "id": 2, "value": "2", "model": "boxImageFigure", "label": "2" },
+      { "id": 3, "value": "3", "model": "boxImageFigure", "label": "3" },
+      { "id": 4, "value": "4", "model": "boxImageFigure", "label": "4" }
     ]
   },
   "9": {
@@ -171,37 +171,37 @@
       {
         "id": 1,
         "value": "34",
-        "model": "stars",
+        "model": "boxImageStars",
         "label": "34"
       },
       {
         "id": 2,
         "value": "36",
-        "model": "stars",
+        "model": "boxImageStars",
         "label": "36"
       },
       {
         "id": 3,
         "value": "53",
-        "model": "stars",
+        "model": "boxImageStars",
         "label": "53"
       },
       {
         "id": 4,
         "value": "44",
-        "model": "stars",
+        "model": "boxImageStars",
         "label": "44"
       },
       {
         "id": 5,
         "value": "66",
-        "model": "stars",
+        "model": "boxImageStars",
         "label": "66"
       },
       {
         "id": 6,
         "value": "42",
-        "model": "stars",
+        "model": "boxImageStars",
         "label": "42"
       }
     ]

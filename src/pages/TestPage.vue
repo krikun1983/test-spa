@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import FormQuestion from "@/components/test-page/FormQuestion.vue";
+import FormQuestion from "@/components/test-page/Form/FormQuestion.vue";
 import ProgressLine from "@/components/test-page/ProgressLine.vue";
 import data from "@/data/data-questions.json";
 export default {

@@ -35,45 +35,33 @@
         v-for="question in questions[questionIndex].inputs"
         :key="question.id"
       >
-        <li
+        <form-item-color
           v-if="
             question.model === 'colorFirst' || question.model === 'colorSecond'
           "
-          :class="[
-            'form__color',
-            answer.value === question.value && 'form__color-active',
-          ]"
-          :style="{ backgroundColor: question.value }"
-          @click.prevent="setAnswer(question.model, question.value)"
-        ></li>
-        <li
-          v-else-if="question.model === 'figure' || question.model === 'stars'"
-          :class="[
-            'form__image',
-            answer.value === question.value && 'form__image-active',
-          ]"
-          @click.prevent="setAnswer(question.model, question.value)"
-        >
-          {{ question.label }}
-        </li>
-        <li
+          :question="question"
+          :answer="answer"
+          @color="setAnswer"
+        />
+        <form-item-image
+          v-else-if="
+            question.model === 'boxImageFigure' ||
+            question.model === 'boxImageStars'
+          "
+          :question="question"
+          :answer="answer"
+          @image="setAnswer"
+        />
+        <form-item-default
+          v-else
           :class="[
             'form__item',
-            answer.value === question.value ? 'form__item_active' : '',
+            answer.value === question.value && 'form__item_active',
           ]"
-          v-else
-        >
-          <input
-            type="radio"
-            ref="inputs"
-            :id="question.value"
-            :value="question.value"
-            :v-model="answer.value"
-            :name="question.model"
-            @change="setAnswer(question.model, $event.target.value)"
-          />
-          <label :for="question.value">{{ question.label }}</label>
-        </li>
+          :question="question"
+          :answer="answer"
+          @image="setAnswer"
+        />
       </template>
     </ul>
     <my-button
@@ -86,14 +74,19 @@
 </template>
 
 <script>
+import FormItemColor from "./Items/FormItemColor.vue";
+import FormItemDefault from "./Items/FormItemDefault.vue";
+import FormItemImage from "./Items/FormItemImage.vue";
 export default {
+  components: { FormItemColor, FormItemImage, FormItemDefault },
   data() {
     return {
-      questionIndex: 5,
+      questionIndex: 1,
       answer: {
         model: "",
         value: "",
       },
+      input: null,
     };
   },
   props: {
@@ -106,15 +99,16 @@ export default {
     nextQuestions() {
       this.questionIndex += 1;
       this.$emit("answer", this.questionIndex, this.answer);
-      this.$refs.inputs.forEach((item) => (item.checked = false));
       this.answer = {
         model: "",
         value: "",
       };
+      this.input.checked = false;
     },
-    setAnswer(model, value) {
+    setAnswer(model, value, linkInput) {
       this.answer.model = model;
       this.answer.value = value;
+      this.input = linkInput;
     },
   },
 };
@@ -147,96 +141,19 @@ export default {
     margin: 0 auto 47px;
   }
 
-  label {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    min-height: 50px;
-    margin-left: 34px;
-    font-size: 18px;
-    letter-spacing: calc(1em / 100 * 5);
-    color: $white;
-  }
-
   &__colors {
     display: grid;
     grid-template-rows: repeat(3, minmax(75px, 1fr));
     grid-template-columns: repeat(3, minmax(75px, 1fr));
     gap: 5vw;
     margin: 0 auto;
-
-    .form__color {
-      width: 100%;
-      height: 100%;
-    }
-
-    .form__color-active {
-      border: 6px solid $accent;
-    }
   }
 
   &__images {
     display: flex;
     justify-content: space-between;
     padding: 0 30px;
-
-    .form__image {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 41px;
-      height: 44px;
-      font-family: "PT Serif", serif;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 49px;
-      background-color: $white;
-    }
-
-    .form__image-active {
-      border: 6px solid $accent;
-    }
   }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    min-height: 50px;
-    background-color: rgba(242, 243, 243, 0.15);
-
-    input[type="radio"] {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-    }
-
-    input[type="radio"] + label::before {
-      content: "";
-      display: inline-block;
-      margin-right: 39px;
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      flex-grow: 0;
-      border: 1px solid $white;
-      border-radius: 20px;
-    }
-
-    input[type="radio"]:checked + label::before {
-      border: 1px solid $bg-images;
-      background-color: #2950c2;
-    }
-
-    &_active {
-      background-color: $accent;
-
-      label {
-        color: $bg-images;
-      }
-    }
-  }
-
   .btn-test {
     position: absolute;
     left: 0;
