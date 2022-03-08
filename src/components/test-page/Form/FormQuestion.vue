@@ -128,7 +128,6 @@ export default {
   justify-content: center;
   padding-bottom: 80px;
   width: 100%;
-  min-height: 522px;
   font-family: "PT Serif", serif;
   font-weight: 400;
   letter-spacing: calc(1em / 100 * 5);
@@ -165,7 +164,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 25px;
+    bottom: 66px;
   }
 }
 

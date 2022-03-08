@@ -22,6 +22,13 @@ body {
   overflow-x: hidden;
 }
 
+html,
+body,
+#app,
+main {
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
