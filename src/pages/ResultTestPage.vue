@@ -54,12 +54,14 @@
       </div>
     </div>
   </main>
+  <footer-block />
 </template>
 
 <script>
 import TimerRevers from "@/components/result-page/TimerRevers.vue";
+import FooterBlock from "@/components/result-page/FooterBlock.vue";
 export default {
-  components: { TimerRevers },
+  components: { TimerRevers, FooterBlock },
   data() {
     return {
       swapi: {},
