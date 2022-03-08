@@ -97,13 +97,20 @@ export default {
   },
   methods: {
     nextQuestions() {
+      if (
+        this.questionIndex !== 5 &&
+        this.questionIndex !== 6 &&
+        this.questionIndex !== 8 &&
+        this.questionIndex !== 11
+      ) {
+        this.input.checked = false;
+      }
       this.questionIndex += 1;
       this.$emit("answer", this.questionIndex, this.answer);
       this.answer = {
         model: "",
         value: "",
       };
-      this.input.checked = false;
     },
     setAnswer(model, value, linkInput) {
       this.answer.model = model;

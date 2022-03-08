@@ -4,9 +4,14 @@
       <div class="burger" @click="setIsModalMenu">
         <span class="burger__lines"></span>
       </div>
-      <div :class="[{ hidden: $route.name !== 'test' }, 'heading']">
+      <div :class="[{ hidden: $route.name === 'main' }, 'heading']">
         <img src="@/assets/img/brain.webp" alt="brain icon" />
-        <h1>тест на определение IQ</h1>
+        <h1 v-if="$route.name === 'test'" class="heading__test">
+          Тест на определение IQ
+        </h1>
+        <h1 v-else-if="$route.name === 'result'" class="heading__result">
+          Готово!
+        </h1>
       </div>
     </div>
     <nav :class="[{ 'nav-header-show': isModalMenu }, 'nav-header']">
@@ -66,19 +71,24 @@ export default {
   display: flex;
   align-items: center;
   margin-left: 48px;
+  font-family: "Yeseva One", serif;
+  text-transform: uppercase;
+  color: $accent;
 
-  img {
-    margin-right: 9px;
-  }
-
-  h1 {
-    font-family: "Yeseva One", serif;
-    font-weight: 400;
+  &__test {
+    margin-left: 9px;
     font-size: 12px;
     line-height: 13.86px;
+    font-weight: 400;
     letter-spacing: calc(1em / 100 * 5);
-    text-transform: uppercase;
-    color: $accent;
+  }
+
+  &__result {
+    margin-left: 24px;
+    font-size: 20px;
+    line-height: 23.86px;
+    font-weight: 400;
+    letter-spacing: calc(1em / 100 * 10);
   }
 }
 
