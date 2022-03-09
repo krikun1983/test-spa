@@ -2,7 +2,7 @@
   <section class="heading">
     <div class="heading__top">
       <h3>Пройдите точный и быстрый</h3>
-      <h1>Тест на определение IQ</h1>
+      <h1>Тест <span>на определение IQ</span></h1>
     </div>
     <div class="heading__bottom">
       <my-button class="btn-active" @click="$router.push('/test/1')">
@@ -11,7 +11,8 @@
       <p>
         <span>И получите рекомендации</span>
         <span>по развитию своего интеллекта</span>
-        и улучшению финансового благосостояния и личной жизни
+        <span class="default-color">и улучшению финансового</span>
+        благосостояния и личной жизни
       </p>
       <a href="#about" class="heading__bottom-more">
         <img
@@ -34,27 +35,26 @@ export default {};
 .heading {
   @include flex-column-between();
   margin: 0 auto;
-  padding: 28px 10% 16px;
+  padding: 9% 6% 4%;
   max-width: $desktop-xl;
   height: 522px;
   color: $white;
   background-image: url("@/assets/img/brain_bk.webp");
   background-color: $bg-images;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center 1%;
   background-size: cover;
 
   @include xss {
     height: 584px;
+    background-position: center 7%;
   }
   @include xs {
     height: 600px;
-    padding-bottom: 20px;
   }
   @include sm {
-    padding-bottom: 22px;
     height: 700px;
-    background-position: center -25px;
+    background-position: center 14%;
   }
   @include m {
     height: 873px;
@@ -64,7 +64,7 @@ export default {};
     @include flex-column-center();
 
     h3 {
-      margin-bottom: 16px;
+      margin-bottom: 5%;
       font-family: "PT Serif", serif;
       font-weight: 400;
       font-size: 20px;
@@ -75,6 +75,11 @@ export default {};
       @include sm {
         font-size: 22px;
         line-height: 25.85px;
+      }
+
+      @include m {
+        font-size: 24px;
+        line-height: 27.85px;
       }
     }
 
@@ -92,6 +97,15 @@ export default {};
         font-size: 36px;
         line-height: 40.64px;
       }
+
+      @include m {
+        font-size: 38px;
+        line-height: 42.64px;
+
+        span {
+          display: inline-block;
+        }
+      }
     }
   }
 
@@ -99,7 +113,7 @@ export default {};
     @include flex-column-center();
 
     p {
-      margin-top: 22px;
+      margin-top: 8%;
       font-family: "PT Serif", serif;
       font-weight: bold;
       font-size: 16px;
@@ -108,8 +122,14 @@ export default {};
       letter-spacing: $spacing-m;
 
       @include sm {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 22px;
+      }
+
+      @include m {
+        margin-top: 10%;
+        font-size: 22px;
+        line-height: 24px;
       }
     }
 
@@ -117,6 +137,10 @@ export default {};
       display: inline-block;
       width: 100%;
       color: $accent;
+    }
+
+    .default-color {
+      color: $white;
     }
 
     &-more {
@@ -128,6 +152,15 @@ export default {};
         img {
           width: 22px;
           height: 22px;
+        }
+      }
+
+      @include m {
+        margin-top: 18px;
+
+        img {
+          width: 24px;
+          height: 24px;
         }
       }
 
@@ -143,6 +176,12 @@ export default {};
           margin-top: 6px;
           font-size: 11px;
           line-height: 13px;
+        }
+
+        @include m {
+          margin-top: 8px;
+          font-size: 14px;
+          line-height: 16px;
         }
       }
     }
