@@ -29,26 +29,28 @@
             <span>Позвонить и прослушать результат</span>
           </button>
           <div class="user__wrapper">
-            <div v-if="Object.keys(swapi).length" class="user">
-              <div>
-                Имя: <span>{{ swapi.name }}</span>
+            <transition name="user-show">
+              <div v-if="Object.keys(swapi).length" class="user">
+                <div>
+                  Имя: <span>{{ swapi.name }}</span>
+                </div>
+                <div>
+                  Рост: <span>{{ swapi.height }}</span>
+                </div>
+                <div>
+                  Вес: <span>{{ swapi.mass }}</span>
+                </div>
+                <div>
+                  Пол: <span>{{ swapi.gender }}</span>
+                </div>
+                <div>
+                  Цвет глаз: <span>{{ swapi.eye_color }}</span>
+                </div>
+                <div>
+                  Цвет волос: <span>{{ swapi.hair_color }}</span>
+                </div>
               </div>
-              <div>
-                Рост: <span>{{ swapi.height }}</span>
-              </div>
-              <div>
-                Вес: <span>{{ swapi.mass }}</span>
-              </div>
-              <div>
-                Пол: <span>{{ swapi.gender }}</span>
-              </div>
-              <div>
-                Цвет глаз: <span>{{ swapi.eye_color }}</span>
-              </div>
-              <div>
-                Цвет волос: <span>{{ swapi.hair_color }}</span>
-              </div>
-            </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -272,6 +274,23 @@ main {
   span {
     font-weight: bold;
     color: $interactive;
+  }
+}
+.user-show-enter-active {
+  animation: user-show-in 0.5s;
+}
+.user-show-leave-active {
+  animation: user-show-in 0.5s reverse;
+}
+@keyframes user-show-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>
