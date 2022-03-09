@@ -277,7 +277,7 @@ main {
   }
 }
 .user-show-enter-active {
-  animation: user-show-in 0.5s;
+  animation: user-show-in 0.4s;
 }
 .user-show-leave-active {
   animation: user-show-in 0.5s reverse;
@@ -287,7 +287,7 @@ main {
     transform: scale(0);
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
