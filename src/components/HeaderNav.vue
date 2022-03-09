@@ -31,7 +31,7 @@
           <a href="#about">Информация о тесте</a>
         </li>
         <li @click="setIsModalMenu">
-          <router-link to="/test">Пройти тест</router-link>
+          <router-link to="/test/1">Пройти тест</router-link>
         </li>
       </ul>
     </nav>

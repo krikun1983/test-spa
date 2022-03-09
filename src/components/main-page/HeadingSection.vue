@@ -5,7 +5,7 @@
       <h1>Тест на определение IQ</h1>
     </div>
     <div class="heading__bottom">
-      <my-button class="btn-active" @click="$router.push('/test')">
+      <my-button class="btn-active" @click="$router.push('/test/1')">
         Пройти тест
       </my-button>
       <p>

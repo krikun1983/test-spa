@@ -81,7 +81,7 @@ export default {
   components: { FormItemColor, FormItemImage, FormItemDefault },
   data() {
     return {
-      questionIndex: 1,
+      questionIndex: +this.$route.params.id || 1,
       answer: {
         model: "",
         value: "",
@@ -111,6 +111,7 @@ export default {
         model: "",
         value: "",
       };
+      this.$router.push(`/test/${this.questionIndex}`);
     },
     setAnswer(model, value, linkInput) {
       this.answer.model = model;

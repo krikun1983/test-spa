@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import MainPage from "@/pages/MainPage.vue";
 import TestPage from "@/pages/TestPage.vue";
 import ResultTestPage from "@/pages/ResultTestPage.vue";
@@ -20,6 +20,11 @@ const routes = [
     component: TestPage,
   },
   {
+    path: "/test/:id",
+    name: "test/:id",
+    component: TestPage,
+  },
+  {
     path: "/result",
     name: "result",
     component: ResultTestPage,
@@ -27,7 +32,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

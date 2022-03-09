@@ -13,7 +13,7 @@
           любовного.
         </p>
       </div>
-      <my-button class="btn-active-opacity" @click="$router.push('/test')">
+      <my-button class="btn-active-opacity" @click="$router.push('/test/1')">
         Пройти тест
       </my-button>
       <p class="copyright">© {{ yearNow }}</p>
