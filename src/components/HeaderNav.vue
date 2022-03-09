@@ -10,8 +10,12 @@
         <span class="burger__lines"></span>
       </div>
       <div :class="[{ hidden: $route.name === 'main' }, 'heading']">
-        <img src="@/assets/img/brain.webp" alt="brain icon" />
-        <h1 v-if="$route.name === 'test'" class="heading__test">
+        <img
+          src="@/assets/img/brain.webp"
+          alt="brain icon"
+          v-if="$route.name !== 'notFoundPage'"
+        />
+        <h1 v-if="$route.name === 'test/:id'" class="heading__test">
           Тест на определение IQ
         </h1>
         <h1 v-else-if="$route.name === 'result'" class="heading__result">

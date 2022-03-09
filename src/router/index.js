@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import MainPage from "@/pages/MainPage.vue";
 import TestPage from "@/pages/TestPage.vue";
 import ResultTestPage from "@/pages/ResultTestPage.vue";
+import NotFoundPage from "@/pages/NotFoundPage.vue";
 
 const routes = [
   {
@@ -17,6 +18,7 @@ const routes = [
   {
     path: "/test",
     name: "test",
+    redirect: "/test/1",
     component: TestPage,
   },
   {
@@ -28,6 +30,11 @@ const routes = [
     path: "/result",
     name: "result",
     component: ResultTestPage,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "notFoundPage",
+    component: NotFoundPage,
   },
 ];
 
