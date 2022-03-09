@@ -76,7 +76,6 @@ export default {};
         font-size: 22px;
         line-height: 25.85px;
       }
-
       @include m {
         font-size: 24px;
         line-height: 27.85px;
@@ -97,7 +96,6 @@ export default {};
         font-size: 36px;
         line-height: 40.64px;
       }
-
       @include m {
         font-size: 38px;
         line-height: 42.64px;
@@ -125,7 +123,6 @@ export default {};
         font-size: 20px;
         line-height: 22px;
       }
-
       @include m {
         margin-top: 10%;
         font-size: 22px;
@@ -177,7 +174,6 @@ export default {};
           font-size: 11px;
           line-height: 13px;
         }
-
         @include m {
           margin-top: 8px;
           font-size: 14px;
