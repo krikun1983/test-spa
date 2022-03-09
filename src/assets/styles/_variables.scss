@@ -1,7 +1,10 @@
 $white: #ffffff;
+$black: #000000;
 $accent: #ffc700;
+$interactive: #3BDE7C;
 $bg-header: #181818;
 $bg-images: #272727;
-$interactive: #3BDE7C;
 
-$mobile: 320px;
+$spacing-s: calc(1em / 100 * 3);
+$spacing-m: calc(1em / 100 * 5);
+$spacing-l: calc(1em / 100 * 10);

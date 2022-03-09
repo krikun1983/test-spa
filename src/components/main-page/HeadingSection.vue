@@ -9,13 +9,11 @@
         Пройти тест
       </my-button>
       <p>
-        <span
-          >И получите рекомендации<br />
-          по развитию своего интеллекта</span
-        >
+        <span>И получите рекомендации</span>
+        <span>по развитию своего интеллекта</span>
         и улучшению финансового благосостояния и личной жизни
       </p>
-      <a href="#about" class="heading__more">
+      <a href="#about" class="heading__bottom-more">
         <img
           src="@/assets/img/more_btn.svg"
           alt="more arrow"
@@ -34,10 +32,10 @@ export default {};
 
 <style lang="scss" scoped>
 .heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-column-between();
+  margin: 0 auto;
+  padding: 28px 10% 16px;
+  max-width: $desktop-xl;
   height: 522px;
   color: $white;
   background-image: url("@/assets/img/brain_bk.webp");
@@ -46,63 +44,107 @@ export default {};
   background-position: center top;
   background-size: cover;
 
-  &__top > h3 {
-    padding-top: 28px;
-    font-family: "PT Serif", serif;
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: calc(1em / 100 * 5);
+  @include xss {
+    height: 584px;
+  }
+  @include xs {
+    height: 600px;
+    padding-bottom: 20px;
+  }
+  @include sm {
+    padding-bottom: 22px;
+    height: 700px;
+    background-position: center -25px;
+  }
+  @include m {
+    height: 873px;
   }
 
-  &__top > h1 {
-    margin: 16px auto 0;
-    width: 80%;
-    font-family: "Yeseva One", serif;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 34.64px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: calc(1em / 100 * 3);
-    color: $accent;
-  }
+  &__top {
+    @include flex-column-center();
 
-  &__bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    h3 {
+      margin-bottom: 16px;
+      font-family: "PT Serif", serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23.85px;
+      text-align: center;
+      letter-spacing: $spacing-m;
 
-  &__bottom > p {
-    margin: 22px auto 0;
-    width: 82%;
-    font-family: "PT Serif", serif;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: calc(1em / 100 * 5);
+      @include sm {
+        font-size: 22px;
+        line-height: 25.85px;
+      }
+    }
 
-    span {
+    h1 {
+      font-family: "Yeseva One", serif;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 34.64px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: $spacing-s;
       color: $accent;
+
+      @include sm {
+        font-size: 36px;
+        line-height: 40.64px;
+      }
     }
   }
 
-  &__more {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 16px 0 12px;
-    cursor: pointer;
+  &__bottom {
+    @include flex-column-center();
+
+    p {
+      margin-top: 22px;
+      font-family: "PT Serif", serif;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: $spacing-m;
+
+      @include sm {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
 
     span {
-      margin-top: 4px;
-      font-size: 8px;
-      line-height: 10.6px;
-      letter-spacing: calc(1em / 100 * 5);
-      color: $white;
-      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      color: $accent;
+    }
+
+    &-more {
+      @include flex-column-center();
+      margin-top: 16px;
+      cursor: pointer;
+
+      @include sm {
+        img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      span {
+        margin-top: 4px;
+        font-size: 8px;
+        line-height: 10.6px;
+        letter-spacing: $spacing-m;
+        color: $white;
+        text-decoration: none;
+
+        @include sm {
+          margin-top: 6px;
+          font-size: 11px;
+          line-height: 13px;
+        }
+      }
     }
   }
 }

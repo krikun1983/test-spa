@@ -1,19 +1,19 @@
 <template>
   <main>
-    <section-heading />
-    <section-about />
-    <section-more />
-    <section-footer />
+    <heading-section />
+    <about-section />
+    <more-section />
+    <footer-section />
   </main>
 </template>
 
 <script>
-import SectionHeading from "@/components/main-page/HeadingSection.vue";
-import SectionAbout from "@/components/main-page/AboutSection.vue";
-import SectionMore from "@/components/main-page/MoreSection.vue";
-import SectionFooter from "@/components/main-page/FooterSection.vue";
+import HeadingSection from "@/components/main-page/HeadingSection.vue";
+import AboutSection from "@/components/main-page/AboutSection.vue";
+import MoreSection from "@/components/main-page/MoreSection.vue";
+import FooterSection from "@/components/main-page/FooterSection.vue";
 export default {
-  components: { SectionHeading, SectionAbout, SectionMore, SectionFooter },
+  components: { HeadingSection, AboutSection, MoreSection, FooterSection },
 };
 </script>
 

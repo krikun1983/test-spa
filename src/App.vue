@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  min-width: $mobile;
+  min-width: $mobile-xss-min;
   overflow-x: hidden;
 }
 
@@ -27,6 +27,12 @@ html,
 body,
 #app {
   height: 100%;
+}
+
+#app {
+  background-image: url("@/assets/img/bg-all.jpg");
+  background-repeat: repeat;
+  background-color: $bg-images;
 }
 
 *,
@@ -39,8 +45,8 @@ body,
 }
 
 main {
+  padding-top: 46px;
   height: 1904px;
-  margin-top: 46px;
 }
 
 li {

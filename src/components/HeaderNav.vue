@@ -140,7 +140,7 @@ export default {
   left: 0;
   bottom: 0;
   z-index: 5;
-  min-width: $mobile;
+  min-width: $mobile-xss-min;
   min-height: 569px;
   background-color: $bg-header;
   transform: translate(-320px);
