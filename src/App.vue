@@ -25,14 +25,9 @@ body {
 
 html,
 body,
-#app {
+#app,
+main {
   height: 100%;
-}
-
-#app {
-  background-image: url("@/assets/img/bg-all.jpg");
-  background-repeat: repeat;
-  background-color: $bg-images;
 }
 
 *,
@@ -44,9 +39,14 @@ body,
   box-sizing: inherit;
 }
 
+#app {
+  background-image: url("@/assets/img/bg-all.jpg");
+  background-repeat: repeat;
+  background-color: $bg-images;
+}
+
 main {
   padding-top: 46px;
-  height: 1904px;
 }
 
 li {
