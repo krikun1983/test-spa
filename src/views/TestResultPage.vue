@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div class="container">
-      <div class="container__layer">
+    <div class="result-container">
+      <div class="result-container__layer">
         <div class="result">
           <h4 class="result__heading-small">Ваш результат рассчитан:</h4>
           <p class="result__text">
@@ -16,10 +16,12 @@
               по звонку с вашего мобильного телефона
             </p>
           </div>
-          <p class="result__timer">
-            Звоните скорее, запись доступна всего
-            <span><timer-revers :timerBase="timerResult" /></span> минут
-          </p>
+          <div class="result__timer">
+            <p>Звоните скорее, запись доступна всего</p>
+            <p>
+              <span><timer-revers :timerBase="timerResult" /></span> минут
+            </p>
+          </div>
           <button
             class="result__btn"
             @click="getApiResource"
@@ -28,9 +30,9 @@
             <img src="@/assets/img/phone.svg" alt="phone" />
             <span>Позвонить и прослушать результат</span>
           </button>
-          <div class="user__wrapper">
-            <transition name="user-show">
-              <div v-if="Object.keys(swapi).length" class="user">
+          <div class="result__user">
+            <transition name="result__user-show">
+              <div v-if="Object.keys(swapi).length" class="result__user-own">
                 <div>
                   Имя: <span>{{ swapi.name }}</span>
                 </div>
@@ -53,6 +55,17 @@
             </transition>
           </div>
         </div>
+        <img
+          class="thunder-left"
+          src="@/assets/img/thunder_left-result.webp"
+          alt="icon"
+        />
+
+        <img
+          class="thunder-right"
+          src="@/assets/img/thunder_right-result.webp"
+          alt="icon"
+        />
       </div>
     </div>
   </main>
@@ -126,79 +139,85 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  margin-top: 0;
-  padding-top: 46px;
-  height: 100%;
-}
-
-.container {
+.result-container {
   min-height: 568px;
   height: 100%;
-  background-image: url("@/assets/img/bk_result.webp");
-  background-color: $bg-images;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
 
   &__layer {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 35px;
+    padding-top: 11vw;
     min-height: 568px;
     height: 100%;
-    background-color: rgba(13, 12, 17, 0.728);
+    background-color: $bg-layer;
+    font-family: "PT Serif", serif;
+    color: $white;
+
+    .thunder-left {
+      position: absolute;
+      top: 44%;
+      left: 0;
+      width: 36vw;
+      z-index: 0;
+      opacity: 0.9;
+    }
+    .thunder-right {
+      position: absolute;
+      top: 51%;
+      right: 0;
+      width: 27vw;
+      z-index: 0;
+      opacity: 0.9;
+    }
   }
 }
 
 .result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "PT Serif", serif;
-  color: $white;
+  @include flex-column-top();
+  position: relative;
+  z-index: 5;
 
   &__heading-small {
-    margin-bottom: 8px;
-    font-size: 16px;
-    line-height: 16px;
+    margin-bottom: 2.5vw;
+    font-size: 5vw;
+    line-height: 1;
     font-weight: 700;
-    letter-spacing: calc(1em / 100 * 10);
+    letter-spacing: $spacing-xl;
     text-align: center;
     text-transform: uppercase;
   }
+
   &__text {
-    margin-bottom: 18px;
-    padding: 0 26px;
-    font-size: 14px;
-    line-height: 18px;
+    margin-bottom: 6vw;
+    padding: 0 10%;
+    font-size: 4.5vw;
+    line-height: 1.25;
     font-weight: 400;
-    letter-spacing: calc(1em / 100 * 5);
+    letter-spacing: $spacing-m;
     text-align: center;
   }
+
   &__heading {
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 5vw;
+    line-height: 1.4;
     font-weight: 700;
-    letter-spacing: calc(1em / 100 * 10);
+    letter-spacing: $spacing-xl;
     text-align: center;
     text-transform: uppercase;
     color: $interactive;
   }
+
   &__box {
-    margin: 0 32px 11px;
-    padding: 15px 12px 12px;
+    @include flex-center();
+    margin: 4.4vw 10vw 4vw;
+    padding: 4vw 0;
     border-radius: 6px;
-    background-color: #1c2741;
+    background-color: $box-text;
 
     &-description {
+      width: 90%;
       font-family: "Roboto", sans-serif;
-      font-size: 8px;
-      line-height: 14px;
+      font-size: 2.5vw;
+      line-height: 1.8;
       font-weight: 500;
       letter-spacing: 2px;
       text-align: center;
@@ -207,34 +226,30 @@ main {
     }
   }
   &__timer {
-    margin-bottom: 11px;
-    padding: 0 24px;
+    margin-bottom: 2.4vw;
     font-family: "PT Serif", serif;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 3.7vw;
+    line-height: 1.2;
     font-weight: 400;
-    letter-spacing: calc(1em / 100 * 10);
+    letter-spacing: $spacing-xl;
     text-align: center;
     color: $interactive;
 
     span {
-      font-size: 20px;
-      line-height: 20px;
+      font-size: 6.5vw;
+      line-height: 1;
     }
   }
   &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 6px;
-    padding-left: 15px;
+    @include flex-between();
+    padding-left: 5vw;
     width: 290px;
     height: 92px;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     line-height: 17.58px;
     font-weight: 900;
-    letter-spacing: calc(1em / 100 * 5);
+    letter-spacing: $spacing-m;
     text-align: left;
     color: $white;
     border: none;
@@ -247,42 +262,43 @@ main {
     }
   }
   &__btn:disabled {
-    background-color: #c7c2c2;
+    background-color: $btn-bg-disabled;
     cursor: default;
   }
 }
 
-.user {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 1.5vw;
-  column-gap: 2vw;
-  margin-top: 10px;
-  width: 90%;
+.result__user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 3.5vw;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 2px;
 
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Roboto", sans-serif;
-    font-size: 12px;
-    line-height: 14px;
-    font-weight: 500;
-    letter-spacing: 2px;
-  }
+  &-own {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5vw;
+    column-gap: 1vw;
+    margin-top: 4vw;
+    width: 90%;
 
-  span {
-    font-weight: bold;
-    color: $interactive;
+    span {
+      font-weight: bold;
+      color: $interactive;
+    }
   }
 }
-.user-show-enter-active {
-  animation: user-show-in 0.4s;
+
+.result__user-show-enter-active {
+  animation: result__user-show-in 0.4s;
 }
-.user-show-leave-active {
-  animation: user-show-in 0.5s reverse;
+.result__user-show-leave-active {
+  animation: result__user-show-in 0.5s reverse;
 }
-@keyframes user-show-in {
+@keyframes result__user-show-in {
   0% {
     transform: scale(0);
   }

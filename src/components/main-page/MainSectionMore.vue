@@ -1,7 +1,7 @@
 <template>
-  <section class="section-more">
-    <div class="container">
-      <p>
+  <section class="main-more">
+    <div class="main-more__layer-color">
+      <p class="main-more__text">
         Также по результатам теста<br />
         <span>вы получите</span> подробные <br /><span>советы</span> по
         определению наиболее перспективной <span>для вашего типа </span>
@@ -9,7 +9,7 @@
         <span> сферы деятельности</span>, <span></span> которая принесет вам
         скорейший финансовый результат.
       </p>
-      <img src="@/assets/img/brain_areas.webp" alt="brain areas" />
+      <img src="@/assets/img/brain_areas-small.webp" alt="brain areas" />
       <my-button class="btn-active" @click="$router.push('/test')">
         Пройти тест
       </my-button>
@@ -22,57 +22,23 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.section-more {
-  background-color: $white;
-  height: 511px;
+.main-more {
+  height: calc(100vw * 1.6);
 
-  @include xss {
-    height: 520px;
-  }
-  @include xs {
-    height: 530px;
-  }
-  @include sm {
-    height: 560px;
-  }
-  @include m {
-    height: 620px;
-  }
-
-  .container {
+  &__layer-color {
     @include flex-column-between();
+    max-width: $media-xl;
     padding: 12% 5% 12%;
     height: 100%;
-
-    @include sm {
-      padding-top: 10%;
-      padding-bottom: 10%;
-    }
-    @include m {
-      padding-top: 8%;
-      padding-bottom: 8%;
-    }
+    background-color: $white;
   }
 
-  p {
+  &__text {
     font-family: "PT Serif", serif;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 5.2vw;
+    line-height: 1.45;
     letter-spacing: $spacing-l;
-
-    @include xs {
-      font-size: 18px;
-      line-height: 26px;
-    }
-    @include sm {
-      font-size: 20px;
-      line-height: 28px;
-    }
-    @include m {
-      font-size: 22px;
-      line-height: 30px;
-    }
 
     span {
       font-weight: bold;
@@ -81,7 +47,7 @@ export default {};
   }
 
   img {
-    width: 60%;
+    width: 65vw;
   }
 }
 </style>

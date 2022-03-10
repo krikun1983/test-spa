@@ -39,23 +39,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-label {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 50px;
-  margin-left: 34px;
-  font-size: 18px;
-  letter-spacing: calc(1em / 100 * 5);
-  color: $white;
-}
-
 .form__item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  min-height: 50px;
   background-color: rgba(242, 243, 243, 0.15);
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 16vw;
+    margin-left: 11%;
+    margin-right: 10%;
+    font-size: 6vw;
+    line-height: 1.2;
+    letter-spacing: $spacing-s;
+    color: $white;
+  }
 
   input[type="radio"] {
     position: absolute;
@@ -66,13 +68,13 @@ label {
   input[type="radio"] + label::before {
     content: "";
     display: inline-block;
-    margin-right: 39px;
-    width: 20px;
-    height: 20px;
+    margin-right: 12vw;
+    width: 6vw;
+    height: 6vw;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid $white;
-    border-radius: 20px;
+    border-radius: 50%;
   }
 
   input[type="radio"]:checked + label::before {

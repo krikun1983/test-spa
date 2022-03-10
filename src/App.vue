@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  min-width: $mobile-xss-min;
+  min-width: $media-xss-min;
   overflow-x: hidden;
 }
 
@@ -39,7 +39,7 @@ main {
   box-sizing: inherit;
 }
 
-#app {
+body {
   background-image: url("@/assets/img/bg-all.jpg");
   background-repeat: repeat;
   background-color: $bg-images;
@@ -47,6 +47,10 @@ main {
 
 main {
   padding-top: 46px;
+
+  @include media-m {
+    padding-top: 60px;
+  }
 }
 
 li {

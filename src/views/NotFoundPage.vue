@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div class="container">
-      <div class="container__layer">
+    <section class="not-found-container">
+      <div class="not-found-container__layer">
         <h2>Страница не найдена</h2>
         <p>
           Путь <span>{{ $route.path }}</span> не существует
@@ -9,7 +9,7 @@
         <img src="@/assets/img/404.webp" alt="404 - page not found" />
         <button class="btn_back" @click="$router.push('/')">На главную</button>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
@@ -18,45 +18,29 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-main {
-  margin-top: 0;
-  padding-top: 46px;
-  height: 100%;
-}
-
-.container {
+.not-found-container {
   min-height: 522px;
   height: 100%;
-  background-image: url("@/assets/img/brain_bk_footer.webp");
-  background-color: $bg-images;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
 
   &__layer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex-column-center();
     min-height: 522px;
     color: $white;
     height: 100%;
-    background-color: rgba(13, 12, 17, 0.728);
+    background-color: $bg-layer;
 
-    h2,
-    p {
-      margin-bottom: 20px;
+    h2 {
+      margin-bottom: 3vw;
     }
 
     h2 {
-      font-size: 20px;
-      line-height: 22px;
+      font-size: 5vw;
+      line-height: 1.2;
     }
 
     p {
-      font-size: 16px;
-      line-height: 18px;
+      font-size: 4vw;
+      line-height: 1.2;
 
       span {
         font-weight: bold;
@@ -65,8 +49,9 @@ main {
     }
 
     img {
-      margin-bottom: 40px;
+      margin: 5vw 0;
       width: 65%;
+      max-width: 300px;
     }
 
     .btn_back {

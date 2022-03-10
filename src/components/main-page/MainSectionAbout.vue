@@ -1,7 +1,7 @@
 <template>
-  <section class="about-test" id="about">
-    <div class="container__layer">
-      <p class="about-test__text">
+  <section class="main-about" id="about">
+    <div class="main-about__layer-color">
+      <p class="main-about__text">
         Профессиональный <br />IQ-тест позволяет не только определить
         коэффициент вашего интеллекта, но и выработать список рекомендаций для
         повышения этого показателя.
@@ -15,29 +15,16 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.about-test {
-  max-width: $desktop-xl;
-  height: 339px;
+.main-about {
+  max-width: $media-xl;
+  height: calc(100vw * 1.06);
   background-image: url("@/assets/img/about_bg.webp");
   background-repeat: no-repeat;
   background-color: #18356f;
   background-position: center center;
   background-size: cover;
 
-  @include xss {
-    height: 345;
-  }
-  @include xs {
-    height: 350px;
-  }
-  @include sm {
-    height: 420px;
-  }
-  @include m {
-    height: 440px;
-  }
-
-  .container__layer {
+  &__layer-color {
     @include flex-column-center();
     height: 100%;
     background-image: radial-gradient(
@@ -51,64 +38,37 @@ export default {};
 
   &__text {
     position: relative;
-    color: $white;
     font-family: "Yeseva One", serif;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 5.5vw;
+    line-height: 1.3;
     text-align: center;
     letter-spacing: $spacing-m;
-
-    @include xss {
-      font-size: 19px;
-      line-height: 24px;
-    }
-    @include sm {
-      font-size: 22px;
-      line-height: 28px;
-    }
+    color: $white;
   }
 
   &__text::before {
     content: "";
     position: absolute;
-    top: -40px;
-    left: -12px;
-    width: 23px;
-    height: 22.36px;
+    top: -20%;
+    left: -4%;
+    width: 20%;
+    height: 12%;
     background-image: url("@/assets/img/bracket_left.svg");
     background-repeat: no-repeat;
     background-size: contain;
-
-    @include xss {
-      width: 24px;
-      height: 24px;
-    }
-    @include sm {
-      width: 26px;
-      height: 26px;
-    }
   }
 
   &__text::after {
     content: "";
     position: absolute;
-    bottom: -40px;
-    right: -12px;
-    width: 23px;
-    height: 22.36px;
+    bottom: -20%;
+    right: -4%;
+    width: 20%;
+    height: 12%;
     background-image: url("@/assets/img/bracket_right.svg");
     background-repeat: no-repeat;
     background-size: contain;
-
-    @include xss {
-      width: 24px;
-      height: 24px;
-    }
-    @include sm {
-      width: 26px;
-      height: 26px;
-    }
   }
 }
 </style>

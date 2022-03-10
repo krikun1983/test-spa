@@ -19,24 +19,22 @@ export default {
 
 <style lang="scss" scoped>
 progress {
-  position: absolute;
-  top: 17px;
-  width: 82%;
-  height: 11px;
-  background-color: #949497;
+  width: 100%;
+  height: 12px;
+  background-color: $interactive-default;
   border: 0;
   border-radius: 10.5px;
 }
 
 progress::-webkit-progress-bar {
   width: 100%;
-  background-color: #949497;
-  border-radius: 10px;
+  background-color: $interactive-default;
+  border-radius: 10.5px;
 }
 
 progress::-webkit-progress-value {
   width: 100%;
   background-color: $interactive;
-  border-radius: 10px;
+  border-radius: 10.5px;
 }
 </style>

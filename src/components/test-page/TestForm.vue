@@ -26,16 +26,16 @@
     />
     <ul
       :class="[
-        'form__list',
-        questions[questionIndex].isColor && 'form__colors',
-        questions[questionIndex].isBox && 'form__images',
+        !questions[questionIndex].isColor && 'form__list',
+        questions[questionIndex].isColor && 'form__list-colors',
+        questions[questionIndex].isBox && 'form__list-images',
       ]"
     >
       <template
         v-for="question in questions[questionIndex].inputs"
         :key="question.id"
       >
-        <form-item-color
+        <test-form-item-color
           v-if="
             question.model === 'colorFirst' || question.model === 'colorSecond'
           "
@@ -43,7 +43,7 @@
           :answer="answer"
           @color="setAnswer"
         />
-        <form-item-image
+        <test-form-item-image
           v-else-if="
             question.model === 'boxImageFigure' ||
             question.model === 'boxImageStars'
@@ -52,11 +52,11 @@
           :answer="answer"
           @image="setAnswer"
         />
-        <form-item-default
+        <test-form-item-default
           v-else
           :class="[
-            'form__item',
-            answer.value === question.value && 'form__item_active',
+            'form__list-default',
+            answer.value === question.value && 'form__list-default_active',
           ]"
           :question="question"
           :answer="answer"
@@ -74,11 +74,11 @@
 </template>
 
 <script>
-import FormItemColor from "./Items/FormItemColor.vue";
-import FormItemDefault from "./Items/FormItemDefault.vue";
-import FormItemImage from "./Items/FormItemImage.vue";
+import TestFormItemColor from "@/components/test-page/TestFormItemColor.vue";
+import TestFormItemDefault from "@/components/test-page/TestFormItemDefault.vue";
+import TestFormItemImage from "@/components/test-page/TestFormItemImage.vue";
 export default {
-  components: { FormItemColor, FormItemImage, FormItemDefault },
+  components: { TestFormItemColor, TestFormItemImage, TestFormItemDefault },
   data() {
     return {
       questionIndex: +this.$route.params.id || 1,
@@ -124,43 +124,46 @@ export default {
 
 <style lang="scss">
 .form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 80px;
+  @include flex-column-center();
   width: 100%;
   font-family: "PT Serif", serif;
   font-weight: 400;
-  letter-spacing: calc(1em / 100 * 5);
+  letter-spacing: $spacing-m;
 
   &__heading {
-    margin: 0 auto 40px;
+    margin-bottom: 10vw;
     width: 86%;
-    font-size: 20px;
+    font-size: 6.5vw;
+    line-height: 1.2;
     font-weight: 400;
-    line-height: 26.5px;
-    letter-spacing: calc(1em / 100 * 5);
+    letter-spacing: $spacing-m;
     text-align: center;
     color: $white;
   }
 
-  &__img {
-    margin: 0 auto 47px;
+  &__list {
+    width: 100%;
   }
 
-  &__colors {
+  &__img {
+    margin: 0 auto 5vw;
+  }
+
+  &__list-colors {
     display: grid;
-    grid-template-rows: repeat(3, minmax(75px, 1fr));
-    grid-template-columns: repeat(3, minmax(75px, 1fr));
-    gap: 5vw;
+    grid-template-rows: repeat(3, minmax(23vw, 1fr));
+    grid-template-columns: repeat(3, minmax(23vw, 1fr));
+    row-gap: 7vw;
+    column-gap: 6.5vw;
     margin: 0 auto;
   }
 
-  &__images {
+  &__list-images {
     display: flex;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 11vw;
   }
+
   .btn-test {
     position: absolute;
     left: 0;
@@ -170,95 +173,90 @@ export default {
 }
 
 .question_2 {
-  padding-bottom: 30px;
-
-  .form__heading {
-    margin-bottom: 51px;
-  }
 }
 .question_3 {
-  padding-bottom: 22px;
+  // padding-bottom: 22px;
 
-  .form__heading {
-    margin-bottom: 45px;
-  }
+  // .form__heading {
+  //   margin-bottom: 45px;
+  // }
 }
 .question_4 {
-  padding-bottom: 28px;
+  // padding-bottom: 28px;
 
   .form__heading {
-    margin-bottom: 30px;
-    width: 74%;
-    font-size: 20px;
-    line-height: 31px;
+    margin-bottom: 14px;
+    //   width: 74%;
+    //   font-size: 20px;
+    //   line-height: 31px;
   }
-  .form__item {
-    margin-bottom: 9px;
-    min-height: 40px;
-  }
-  label {
-    min-height: 40px;
-  }
+  // .form__list-default {
+  //   margin-bottom: 9px;
+  //   min-height: 40px;
+  // }
+  // label {
+  //   min-height: 40px;
+  // }
 }
 .question_5 {
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 
-  .form__heading {
-    margin-bottom: 33px;
-    width: 82%;
-    font-size: 19px;
-    line-height: 23px;
-  }
+  // .form__heading {
+  //   margin-bottom: 33px;
+  //   width: 82%;
+  //   font-size: 19px;
+  //   line-height: 23px;
+  // }
 }
 .question_6 {
-  padding-bottom: 26px;
+  // padding-bottom: 26px;
 
-  .form__heading {
-    margin-bottom: 16px;
-    width: 82%;
-    font-size: 19px;
-    line-height: 23px;
-  }
+  // .form__heading {
+  //   margin-bottom: 16px;
+  //   width: 82%;
+  //   font-size: 19px;
+  //   line-height: 23px;
+  // }
 }
 .question_7 {
-  padding-bottom: 16px;
+  // padding-bottom: 16px;
 
-  .form__heading {
-    margin-bottom: 24px;
-    width: 72%;
-  }
-  .form__item {
-    margin-bottom: 9px;
-    min-height: 40px;
-  }
-  label {
-    min-height: 40px;
-  }
+  // .form__heading {
+  //   margin-bottom: 24px;
+  //   width: 72%;
+  // }
+  // .form__list-default {
+  //   margin-bottom: 9px;
+  //   min-height: 40px;
+  // }
+  // label {
+  //   min-height: 40px;
+  // }
 }
 .question_8 {
-  padding-bottom: 52px;
+  // padding-bottom: 52px;
 
-  .form__heading {
-    margin-bottom: 26px;
-    width: 82%;
-    font-size: 18px;
-    line-height: 23.85px;
-  }
-  .form__images {
-    padding: 0 36px;
-  }
-  .form__img {
-    margin-bottom: 28px;
-  }
+  // .form__heading {
+  //   margin-bottom: 26px;
+  //   width: 82%;
+  //   font-size: 18px;
+  //   line-height: 23.85px;
+  // }
+  // .form__list-images {
+  //   padding: 0 36px;
+  // }
+  // .form__img {
+  //   margin-bottom: 14px;
+  // }
 }
 .question_9 {
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 
-  .form__heading {
-    font-size: 19px;
-    line-height: 25.85px;
-  }
-  .form__item {
+  // .form__heading {
+  //   font-size: 19px;
+  //   line-height: 25.85px;
+  // }
+  .form__list-default {
     margin-bottom: 19px;
     min-height: 78px;
 
@@ -266,34 +264,41 @@ export default {
       margin-right: 18px;
     }
   }
-  label {
-    min-height: 78px;
-  }
+  // label {
+  //   min-height: 78px;
+  // }
 }
 .question_10 {
-  padding-bottom: 44px;
+  // padding-bottom: 44px;
 
   .form__heading {
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 21.2px;
+
+    @include media-sm {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   .form__img {
-    margin-bottom: 20px;
+    @include media-sm {
+      width: 50%;
+    }
   }
 }
 .question_11 {
-  padding-bottom: 38px;
+  // padding-bottom: 38px;
 
-  .form__heading {
-    margin-bottom: 16px;
-    width: 76%;
-  }
-  .form__images {
+  // .form__heading {
+  //   margin-bottom: 16px;
+  //   width: 76%;
+  // }
+  .form__list-images {
     position: relative;
     padding: 0 16px;
   }
-  .form__images::before {
+  .form__list-images::before {
     content: "";
     position: absolute;
     top: -23px;

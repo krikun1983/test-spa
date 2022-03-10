@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainPage from "@/pages/MainPage.vue";
-import TestPage from "@/pages/TestPage.vue";
-import ResultTestPage from "@/pages/ResultTestPage.vue";
-import NotFoundPage from "@/pages/NotFoundPage.vue";
+import MainPage from "@/views/MainPage.vue";
+import TestPage from "@/views/TestPage.vue";
+import TestResultPage from "@/views/TestResultPage.vue";
+import NotFoundPage from "@/views/NotFoundPage.vue";
 
 const routes = [
   {
@@ -29,7 +29,7 @@ const routes = [
   {
     path: "/result",
     name: "result",
-    component: ResultTestPage,
+    component: TestResultPage,
   },
   {
     path: "/:pathMatch(.*)*",

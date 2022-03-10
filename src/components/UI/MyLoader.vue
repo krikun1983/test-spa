@@ -14,10 +14,6 @@ export default {
 
 <style lang="scss" scoped>
 .spinner__wrapper {
-  position: fixed;
-  top: 38%;
-  left: 38%;
-  z-index: 25;
   width: 70px;
   height: 70px;
   animation: rotate 1s infinite linear;

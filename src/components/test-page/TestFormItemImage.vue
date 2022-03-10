@@ -35,12 +35,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 41px;
-  height: 44px;
+  width: 13vw;
+  height: 13vw;
   font-family: "PT Serif", serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 49px;
+  font-size: 7vw;
+  line-height: 1.2;
   background-color: $white;
 }
 

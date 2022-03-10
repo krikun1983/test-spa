@@ -23,14 +23,14 @@ export default {
   font-size: 14px;
   line-height: 17.6px;
   text-transform: uppercase;
-  letter-spacing: calc(1em / 100 * 10);
+  letter-spacing: $spacing-xl;
   color: #0d0c11;
   border: none;
   border-radius: 20px;
 }
 
 .btn-active {
-  background-color: #ffc700;
+  background-color: $accent;
 }
 
 .btn-active-opacity {
@@ -40,8 +40,8 @@ export default {
 }
 
 .btn-disabled {
-  color: #8e8e8e;
-  background-color: #dadada;
+  color: $btn-text-disabled;
+  background-color: $btn-bg-disabled;
   -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.25) inset;
   -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.25) inset;
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.25) inset;

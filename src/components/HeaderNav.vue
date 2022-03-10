@@ -65,6 +65,10 @@ export default {
   right: 0;
   height: 46px;
   background-color: $bg-header;
+
+  @include media-m {
+    height: 60px;
+  }
 }
 
 .header-fixed {
@@ -72,7 +76,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 10;
 }
 
 .burger {
@@ -83,6 +87,7 @@ export default {
   display: flex;
   align-items: center;
   margin-left: 48px;
+  max-height: 46px;
   font-family: "Yeseva One", serif;
   text-transform: uppercase;
   color: $accent;
@@ -92,7 +97,7 @@ export default {
     font-size: 12px;
     line-height: 13.86px;
     font-weight: 400;
-    letter-spacing: calc(1em / 100 * 5);
+    letter-spacing: $spacing-m;
   }
 
   &__result {
@@ -100,21 +105,20 @@ export default {
     font-size: 20px;
     line-height: 23.86px;
     font-weight: 400;
-    letter-spacing: calc(1em / 100 * 10);
+    letter-spacing: $spacing-xl;
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
 .burger__lines {
   position: absolute;
   top: 23px;
   left: 15px;
   z-index: 4;
+
+  @include media-m {
+    top: 30px;
+    left: 30px;
+  }
 }
 .burger__lines,
 .burger__lines::before,
@@ -123,15 +127,28 @@ export default {
   width: 24px;
   height: 2.67px;
   background-color: #696969;
+
+  @include media-m {
+    width: 30px;
+    height: 3px;
+  }
 }
 
 .burger__lines::before {
   content: "";
   top: -7px;
+
+  @include media-m {
+    top: -10px;
+  }
 }
 .burger__lines::after {
   content: "";
   top: 7px;
+
+  @include media-m {
+    top: 10px;
+  }
 }
 
 .nav-header {
@@ -140,7 +157,7 @@ export default {
   left: 0;
   bottom: 0;
   z-index: 5;
-  min-width: $mobile-xss-min;
+  min-width: $media-xss-min;
   min-height: 569px;
   background-color: $bg-header;
   transform: translate(-320px);
@@ -153,6 +170,11 @@ export default {
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    @include media-m {
+      top: 22px;
+      right: 22px;
+    }
   }
 
   .menu-header {
@@ -172,6 +194,11 @@ export default {
       text-decoration: none;
       text-transform: uppercase;
       color: $white;
+
+      @include media-m {
+        font-size: 20px;
+        line-height: 28px;
+      }
     }
     a.router-link-active {
       color: $accent;
