@@ -205,7 +205,7 @@ export default {
     bottom: 25px;
 
     @include media-md {
-      bottom: 180px;
+      bottom: 100px;
     }
   }
 }

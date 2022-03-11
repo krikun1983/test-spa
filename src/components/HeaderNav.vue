@@ -202,7 +202,10 @@ export default {
       }
       @include media-md {
         top: 100px;
-        right: calc((100vw - $media-xl) / 2);
+        right: 20%;
+      }
+      @include media-xll {
+        right: calc((100vw - $media-xll) / 2);
       }
     }
 
@@ -212,8 +215,8 @@ export default {
       @include media-m {
         margin-left: 10vw;
       }
-      @include media-md {
-        margin-left: calc((100vw - $media-xl) / 2);
+      @include media-xll {
+        margin-left: calc((100vw - $media-xll) / 2);
       }
 
       li {
