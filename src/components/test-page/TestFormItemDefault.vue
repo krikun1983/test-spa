@@ -64,6 +64,7 @@ export default {
     }
     @include media-m {
       min-height: 8vw;
+      padding-left: 20px;
       font-size: 3.5vw;
     }
     @include media-md {

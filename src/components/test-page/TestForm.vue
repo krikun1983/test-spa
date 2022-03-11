@@ -224,6 +224,7 @@ export default {
 
     @include media-m {
       padding: 1% 0;
+      margin-bottom: 10px;
     }
 
     input[type="radio"] + label::before {
@@ -268,11 +269,16 @@ export default {
   .form__list-default {
     margin-bottom: 3vw;
 
+    @include media-m {
+      margin-bottom: 10px;
+    }
+
     label {
       @include media-sm {
         min-height: 12vw;
       }
       @include media-m {
+        padding-left: 0;
         min-height: 8vw;
       }
       @include media-md {
