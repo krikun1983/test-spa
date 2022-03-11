@@ -134,6 +134,10 @@ export default {
   min-height: calc(100vw * 1.65);
   height: 100%;
 
+  @include media-m {
+    min-height: 100vw;
+  }
+
   &__layer {
     position: relative;
     padding-top: 11vw;
@@ -141,6 +145,10 @@ export default {
     background-color: $bg-layer;
     font-family: "PT Serif", serif;
     color: $white;
+
+    @include media-m {
+      padding-top: 5vw;
+    }
 
     .thunder-left {
       position: absolute;
@@ -175,6 +183,11 @@ export default {
     letter-spacing: $spacing-xl;
     text-align: center;
     text-transform: uppercase;
+
+    @include media-m {
+      margin-bottom: 1.5vw;
+      font-size: 4vw;
+    }
   }
 
   &__text {
@@ -185,6 +198,11 @@ export default {
     font-weight: 400;
     letter-spacing: $spacing-m;
     text-align: center;
+
+    @include media-m {
+      margin-bottom: 4vw;
+      font-size: 3vw;
+    }
   }
 
   &__heading {
@@ -195,6 +213,10 @@ export default {
     text-align: center;
     text-transform: uppercase;
     color: $interactive;
+
+    @include media-m {
+      font-size: 4vw;
+    }
   }
 
   &__box {
@@ -203,6 +225,11 @@ export default {
     padding: 4vw 0;
     border-radius: 6px;
     background-color: $box-text;
+
+    @include media-m {
+      margin: 3vw 8vw;
+      padding: 2vw 0;
+    }
 
     &-description {
       width: 90%;
@@ -214,6 +241,10 @@ export default {
       text-align: center;
       text-transform: uppercase;
       color: $white;
+
+      @include media-m {
+        font-size: 2vw;
+      }
     }
   }
   &__timer {
@@ -226,9 +257,17 @@ export default {
     text-align: center;
     color: $interactive;
 
+    @include media-m {
+      font-size: 2.7vw;
+    }
+
     span {
       font-size: 6.5vw;
       line-height: 1;
+
+      @include media-m {
+        font-size: 5vw;
+      }
     }
   }
   &__btn {
@@ -238,7 +277,7 @@ export default {
     height: 92px;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
-    line-height: 17.58px;
+    line-height: 1.2;
     font-weight: 900;
     letter-spacing: $spacing-m;
     text-align: left;
@@ -248,8 +287,15 @@ export default {
     background-color: #eb1b00;
     cursor: pointer;
 
+    @include media-m {
+      padding-left: 4vw;
+      width: 45vw;
+      height: 12vw;
+      font-size: 2.3vw;
+    }
+
     img {
-      padding-right: 18px;
+      padding-right: 3vw;
     }
   }
   &__btn:disabled {
@@ -268,12 +314,20 @@ export default {
   width: 100%;
   min-height: 16vw;
 
+  @include media-m {
+    font-size: 2.5vw;
+  }
+
   &-own {
     display: grid;
     grid-template-columns: 1fr 30vw;
     row-gap: 1.5vw;
     column-gap: 2vw;
     margin-top: 4vw;
+
+    @include media-m {
+      margin-top: 2.5vw;
+    }
 
     span {
       font-weight: bold;

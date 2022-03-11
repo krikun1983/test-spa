@@ -36,11 +36,19 @@ export default {};
     h2 {
       font-size: 5vw;
       line-height: 1.2;
+
+      @include media-m {
+        font-size: 4vw;
+      }
     }
 
     p {
       font-size: 4vw;
       line-height: 1.2;
+
+      @include media-m {
+        font-size: 3vw;
+      }
 
       span {
         font-weight: bold;

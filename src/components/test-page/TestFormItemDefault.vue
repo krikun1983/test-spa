@@ -62,6 +62,11 @@ export default {
       min-height: 14vw;
       font-size: 5.5vw;
     }
+
+    @include media-m {
+      min-height: 8vw;
+      font-size: 3.5vw;
+    }
   }
 
   input[type="radio"] {
@@ -84,6 +89,12 @@ export default {
     @include media-sm {
       width: 5vw;
       height: 5vw;
+    }
+
+    @include media-m {
+      margin-right: 6vw;
+      width: 4vw;
+      height: 4vw;
     }
   }
 

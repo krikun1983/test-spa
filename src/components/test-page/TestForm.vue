@@ -130,6 +130,10 @@ export default {
   font-weight: 400;
   letter-spacing: $spacing-m;
 
+  @include media-m {
+    width: 70%;
+  }
+
   &__heading {
     margin-bottom: 10vw;
     width: 86%;
@@ -143,6 +147,11 @@ export default {
     @include media-sm {
       margin-bottom: 7vw;
       font-size: 5.5vw;
+    }
+
+    @include media-m {
+      margin-bottom: 4vw;
+      font-size: 4vw;
     }
   }
 
@@ -161,6 +170,13 @@ export default {
     row-gap: 7vw;
     column-gap: 6.5vw;
     margin: 0 auto;
+
+    @include media-m {
+      grid-template-rows: repeat(3, minmax(15vw, 1fr));
+      grid-template-columns: repeat(3, minmax(15vw, 1fr));
+      row-gap: 4vw;
+      column-gap: 4vw;
+    }
   }
 
   &__list-images {
@@ -190,10 +206,19 @@ export default {
 .question_7 {
 }
 .question_8 {
+  .form__img {
+    @include media-m {
+      width: 50%;
+    }
+  }
 }
 .question_9 {
   .form__list-default {
     margin-bottom: 3vw;
+
+    @include media-m {
+      padding: 1% 0;
+    }
 
     input[type="radio"] + label::before {
       margin-right: 4vw;
@@ -205,11 +230,18 @@ export default {
     @include media-sm {
       margin-bottom: 4vw;
       font-size: 4.5vw;
+
+      @include media-m {
+        font-size: 3vw;
+      }
     }
   }
   .form__img {
     @include media-sm {
       width: 40%;
+    }
+    @include media-m {
+      width: 50%;
     }
   }
 
@@ -219,6 +251,9 @@ export default {
     label {
       @include media-sm {
         min-height: 12vw;
+      }
+      @include media-m {
+        min-height: 8vw;
       }
     }
 

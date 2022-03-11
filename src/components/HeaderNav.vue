@@ -161,6 +161,11 @@ export default {
       line-height: 1.2;
       font-weight: 400;
       letter-spacing: $spacing-xl;
+
+      @include media-m {
+        margin-left: 4%;
+        font-size: 5vw;
+      }
     }
   }
 
@@ -170,10 +175,10 @@ export default {
     left: 0;
     bottom: 0;
     z-index: 15;
-    min-width: $media-xss-min;
+    width: 100vw;
     min-height: 569px;
     background-color: $bg-header;
-    transform: translate(-320px);
+    transform: translate(-100vw);
     transition: transform 0.3s ease-in;
 
     &_modal-btn {
@@ -185,16 +190,20 @@ export default {
       cursor: pointer;
 
       @include media-m {
-        top: 22px;
-        right: 22px;
+        top: 8vw;
+        right: 8vw;
       }
     }
 
     &-menu {
       margin: 100px 0 0 23px;
 
+      @include media-m {
+        margin-left: 10vw;
+      }
+
       li {
-        margin-bottom: 27px;
+        margin-bottom: 8vw;
       }
 
       a {
@@ -202,15 +211,14 @@ export default {
         width: 100%;
         font-family: "Roboto";
         font-weight: 300;
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 5vw;
+        line-height: 1.4;
         text-decoration: none;
         text-transform: uppercase;
         color: $white;
 
         @include media-m {
-          font-size: 20px;
-          line-height: 28px;
+          font-size: 4vw;
         }
       }
       a.router-link-active {

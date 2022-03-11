@@ -29,6 +29,10 @@ export default {};
     font-size: 8vw;
     line-height: 1.2;
     text-align: center;
+
+    @include media-m {
+      font-size: 6vw;
+    }
   }
   &__text {
     margin-top: 8vw;
@@ -37,6 +41,10 @@ export default {};
     line-height: 1.2;
     text-align: justify;
     word-wrap: break-word;
+
+    @include media-m {
+      font-size: 3.3vw;
+    }
   }
 }
 </style>

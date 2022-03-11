@@ -42,6 +42,12 @@ export default {
   font-size: 7vw;
   line-height: 1.2;
   background-color: $white;
+
+  @include media-m {
+    width: 8vw;
+    height: 8vw;
+    font-size: 4vw;
+  }
 }
 
 .form__image-active {
