@@ -42,11 +42,17 @@ export default {
   font-size: 7vw;
   line-height: 1.2;
   background-color: $white;
+  cursor: pointer;
 
   @include media-m {
     width: 8vw;
     height: 8vw;
     font-size: 4vw;
+  }
+  @include media-md {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
   }
 }
 

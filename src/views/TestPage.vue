@@ -72,6 +72,8 @@ export default {
 
 <style lang="scss" scoped>
 .test-container {
+  margin: 0 auto;
+  max-width: $media-xl;
   min-height: 522px;
   height: 100%;
 
@@ -90,6 +92,10 @@ export default {
     position: absolute;
     top: 2%;
     width: 82%;
+
+    @include media-md {
+      width: 60%;
+    }
   }
 }
 </style>

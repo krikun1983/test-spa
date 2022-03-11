@@ -48,11 +48,16 @@ export default {
 
 <style lang="scss" scoped>
 .main-footer {
+  margin: 0 auto;
+  max-width: $media-xl;
   height: calc(100vw * 1.66);
   font-family: "Merriweather", serif;
 
   @include media-m {
     height: calc(100vw);
+  }
+  @include media-md {
+    height: 630px;
   }
 
   &__layer {
@@ -72,6 +77,10 @@ export default {
       left: 0;
       width: 43vw;
       z-index: 5;
+
+      @include media-md {
+        width: 200px;
+      }
     }
     .thunder-right {
       position: absolute;
@@ -79,6 +88,10 @@ export default {
       right: 0;
       width: 40vw;
       z-index: 5;
+
+      @include media-md {
+        width: 200px;
+      }
     }
   }
 
@@ -90,6 +103,10 @@ export default {
 
     @include media-m {
       font-size: 4vw;
+    }
+    @include media-md {
+      font-size: 22px;
+      text-align: center;
     }
 
     span {
@@ -113,6 +130,12 @@ export default {
       height: 50vw;
       font-size: 4vw;
     }
+    @include media-md {
+      margin: 15px 8% 25px;
+      height: 300px;
+      font-size: 24px;
+      text-align: center;
+    }
 
     span {
       font-weight: 700;
@@ -134,10 +157,16 @@ export default {
     @include media-m {
       margin-top: 6%;
     }
+    @include media-md {
+      font-size: 20px;
+    }
 
     span {
       font-size: 3.2vw;
       line-height: 1.8;
+      @include media-md {
+        font-size: 20px;
+      }
     }
   }
 }

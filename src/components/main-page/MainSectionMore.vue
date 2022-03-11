@@ -2,9 +2,9 @@
   <section class="main-more">
     <div class="main-more__layer-color">
       <p class="main-more__text">
-        Также по результатам теста<br />
-        <span>вы получите</span> подробные <br /><span>советы</span> по
-        определению наиболее перспективной <span>для вашего типа </span>
+        Также по результатам теста <span>вы получите</span> подробные
+        <span>советы</span> по определению наиболее перспективной
+        <span>для вашего типа </span>
         <b>интеллекта</b>
         <span> сферы деятельности</span>, <span></span> которая принесет вам
         скорейший финансовый результат.
@@ -23,10 +23,15 @@ export default {};
 
 <style lang="scss" scoped>
 .main-more {
+  margin: 0 auto;
+  max-width: $media-xl;
   height: calc(100vw * 1.6);
 
   @include media-m {
     height: calc(100vw);
+  }
+  @include media-md {
+    height: 600px;
   }
 
   &__layer-color {
@@ -38,6 +43,9 @@ export default {};
 
     @include media-m {
       padding: 4% 5% 6%;
+    }
+    @include media-md {
+      padding: 20px 4% 20px;
     }
   }
 
@@ -51,6 +59,9 @@ export default {};
     @include media-m {
       font-size: 3.6vw;
     }
+    @include media-md {
+      font-size: 24px;
+    }
 
     span {
       font-weight: bold;
@@ -60,6 +71,11 @@ export default {};
 
   img {
     width: 65vw;
+    max-width: 450px;
+
+    @include media-md {
+      // width: 65vw;
+    }
   }
 }
 </style>

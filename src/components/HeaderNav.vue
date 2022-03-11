@@ -152,6 +152,10 @@ export default {
       line-height: 1.2;
       font-weight: 400;
       letter-spacing: $spacing-m;
+
+      @include media-md {
+        font-size: 36px;
+      }
     }
 
     &-result {
@@ -165,6 +169,9 @@ export default {
       @include media-m {
         margin-left: 4%;
         font-size: 5vw;
+      }
+      @include media-md {
+        font-size: 36px;
       }
     }
   }

@@ -27,5 +27,9 @@ export default {};
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   padding: 0 3vw;
+
+  @include media-md {
+    font-size: 16px;
+  }
 }
 </style>

@@ -137,6 +137,9 @@ export default {
   @include media-m {
     min-height: 100vw;
   }
+  @include media-md {
+    min-height: 50vw;
+  }
 
   &__layer {
     position: relative;
@@ -149,6 +152,9 @@ export default {
     @include media-m {
       padding-top: 5vw;
     }
+    @include media-md {
+      padding-top: 30px;
+    }
 
     .thunder-left {
       position: absolute;
@@ -157,6 +163,10 @@ export default {
       width: 36vw;
       z-index: 0;
       opacity: 0.9;
+
+      @include media-md {
+        top: -150px;
+      }
     }
     .thunder-right {
       position: absolute;
@@ -165,12 +175,18 @@ export default {
       width: 27vw;
       z-index: 0;
       opacity: 0.9;
+
+      @include media-md {
+        top: -350px;
+      }
     }
   }
 }
 
 .result {
   @include flex-column-top();
+  margin: 0 auto;
+  max-width: $media-xl;
   position: relative;
   z-index: 5;
   height: 100%;
@@ -188,6 +204,10 @@ export default {
       margin-bottom: 1.5vw;
       font-size: 4vw;
     }
+    @include media-md {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
   }
 
   &__text {
@@ -203,6 +223,10 @@ export default {
       margin-bottom: 4vw;
       font-size: 3vw;
     }
+    @include media-md {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
   }
 
   &__heading {
@@ -217,6 +241,9 @@ export default {
     @include media-m {
       font-size: 4vw;
     }
+    @include media-md {
+      font-size: 32px;
+    }
   }
 
   &__box {
@@ -229,6 +256,10 @@ export default {
     @include media-m {
       margin: 3vw 8vw;
       padding: 2vw 0;
+    }
+    @include media-md {
+      margin: 20px 15px;
+      padding: 15px 0;
     }
 
     &-description {
@@ -245,6 +276,9 @@ export default {
       @include media-m {
         font-size: 2vw;
       }
+      @include media-md {
+        font-size: 20px;
+      }
     }
   }
   &__timer {
@@ -260,6 +294,10 @@ export default {
     @include media-m {
       font-size: 2.7vw;
     }
+    @include media-md {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
 
     span {
       font-size: 6.5vw;
@@ -267,6 +305,9 @@ export default {
 
       @include media-m {
         font-size: 5vw;
+      }
+      @include media-md {
+        font-size: 26px;
       }
     }
   }
@@ -293,6 +334,13 @@ export default {
       height: 12vw;
       font-size: 2.3vw;
     }
+    @include media-md {
+      @include flex-center();
+      padding: 0 20px;
+      min-width: 300px;
+      height: 90px;
+      font-size: 20px;
+    }
 
     img {
       padding-right: 3vw;
@@ -317,6 +365,9 @@ export default {
   @include media-m {
     font-size: 2.5vw;
   }
+  @include media-md {
+    font-size: 18px;
+  }
 
   &-own {
     display: grid;
@@ -327,6 +378,9 @@ export default {
 
     @include media-m {
       margin-top: 2.5vw;
+    }
+    @include media-md {
+      margin-top: 20px;
     }
 
     span {

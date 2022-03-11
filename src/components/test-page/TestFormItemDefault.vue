@@ -40,15 +40,15 @@ export default {
 
 <style lang="scss" scoped>
 .form__item {
-  display: flex;
-  align-items: center;
   margin-bottom: 8px;
   background-color: rgba(242, 243, 243, 0.15);
 
+  @include media-md {
+    margin-bottom: 10px;
+  }
+
   label {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex-left();
     width: 100%;
     min-height: 16vw;
     margin-left: 11%;
@@ -62,10 +62,15 @@ export default {
       min-height: 14vw;
       font-size: 5.5vw;
     }
-
     @include media-m {
       min-height: 8vw;
       font-size: 3.5vw;
+    }
+    @include media-md {
+      margin-left: 20px;
+      width: inherit;
+      min-height: 60px;
+      font-size: 24px;
     }
   }
 
@@ -90,11 +95,15 @@ export default {
       width: 5vw;
       height: 5vw;
     }
-
     @include media-m {
       margin-right: 6vw;
       width: 4vw;
       height: 4vw;
+    }
+    @include media-md {
+      margin-right: 20px;
+      width: 26px;
+      height: 26px;
     }
   }
 

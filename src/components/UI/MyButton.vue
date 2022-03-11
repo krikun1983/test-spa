@@ -27,16 +27,29 @@ export default {
   color: #0d0c11;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .btn-active {
   background-color: $accent;
+
+  &:hover {
+    color: $accent;
+    border: 1px solid $accent;
+    background-color: transparent;
+  }
 }
 
 .btn-active-opacity {
   color: $white;
   border: 1px solid $white;
   background-color: transparent;
+
+  &:hover {
+    color: #0d0c11;
+    border: none;
+    background-color: $accent;
+  }
 }
 
 .btn-disabled {

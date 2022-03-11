@@ -13,7 +13,7 @@
       </my-button>
       <p>
         <span>И получите рекомендации</span>
-        <span>по развитию своего интеллекта</span>
+        <span>по развитию своего интеллекта </span>
         <span class="color-default">и улучшению финансового</span>
         благосостояния и личной жизни
       </p>
@@ -47,6 +47,10 @@ export default {};
     padding: 4% 5% 4%;
   }
 
+  @include media-md {
+    padding: 25px 3% 25px;
+  }
+
   &__top {
     @include flex-column-center();
 
@@ -62,6 +66,11 @@ export default {};
       @include media-m {
         font-size: 4vw;
       }
+
+      @include media-md {
+        margin-bottom: 15px;
+        font-size: 30px;
+      }
     }
 
     h1 {
@@ -76,6 +85,10 @@ export default {};
 
       @include media-m {
         font-size: 6vw;
+      }
+
+      @include media-md {
+        font-size: 38px;
       }
     }
   }
@@ -93,6 +106,12 @@ export default {};
       @include media-m {
         width: 42%;
         bottom: 2.2vw;
+      }
+
+      @include media-md {
+        width: 240px;
+        right: 0;
+        bottom: 0;
       }
     }
   }
@@ -113,12 +132,21 @@ export default {};
         margin-top: 6%;
         font-size: 4vw;
       }
-    }
+      @include media-md {
+        margin-top: 15px;
+        padding: 0 4%;
+        font-size: 26px;
+      }
 
-    span {
-      display: inline-block;
-      width: 100%;
-      color: $accent;
+      span {
+        display: inline-block;
+        width: 100%;
+        color: $accent;
+
+        @include media-md {
+          display: inline;
+        }
+      }
     }
 
     .color-default {
@@ -142,6 +170,11 @@ export default {};
           width: 4vw;
           height: 4vw;
         }
+
+        @include media-md {
+          width: 32px;
+          height: 32px;
+        }
       }
 
       span {
@@ -154,6 +187,9 @@ export default {};
 
         @include media-m {
           font-size: 2vw;
+        }
+        @include media-md {
+          font-size: 15px;
         }
       }
     }

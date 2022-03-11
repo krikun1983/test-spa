@@ -64,6 +64,7 @@
         />
       </template>
     </ul>
+
     <my-button
       :class="[answer.value ? 'btn-active' : 'btn-disabled', 'btn-test']"
       @click="nextQuestions"
@@ -133,6 +134,9 @@ export default {
   @include media-m {
     width: 70%;
   }
+  @include media-md {
+    flex-direction: row;
+  }
 
   &__heading {
     margin-bottom: 10vw;
@@ -148,10 +152,15 @@ export default {
       margin-bottom: 7vw;
       font-size: 5.5vw;
     }
-
     @include media-m {
       margin-bottom: 4vw;
       font-size: 4vw;
+    }
+    @include media-md {
+      margin-bottom: 20px;
+      padding-right: 4%;
+      font-size: 32px;
+      text-align: left;
     }
   }
 
@@ -177,12 +186,22 @@ export default {
       row-gap: 4vw;
       column-gap: 4vw;
     }
+    @include media-md {
+      grid-template-rows: repeat(3, minmax(85px, 1fr));
+      grid-template-columns: repeat(3, minmax(85px, 1fr));
+      row-gap: 20px;
+      column-gap: 20px;
+    }
   }
 
   &__list-images {
     display: flex;
     justify-content: space-between;
     padding: 0 11vw;
+
+    @include media-md {
+      padding: 0 30px;
+    }
   }
 
   .btn-test {
@@ -190,6 +209,10 @@ export default {
     left: 0;
     right: 0;
     bottom: 25px;
+
+    @include media-md {
+      bottom: 180px;
+    }
   }
 }
 
@@ -222,6 +245,10 @@ export default {
 
     input[type="radio"] + label::before {
       margin-right: 4vw;
+
+      @include media-md {
+        margin-right: 20px;
+      }
     }
   }
 }
@@ -234,6 +261,9 @@ export default {
       @include media-m {
         font-size: 3vw;
       }
+      @include media-md {
+        font-size: 30px;
+      }
     }
   }
   .form__img {
@@ -242,6 +272,10 @@ export default {
     }
     @include media-m {
       width: 50%;
+    }
+    @include media-md {
+      margin-right: 15px;
+      width: 200px;
     }
   }
 
@@ -255,10 +289,17 @@ export default {
       @include media-m {
         min-height: 8vw;
       }
+      @include media-md {
+        min-height: 60px;
+      }
     }
 
     input[type="radio"] + label::before {
       margin-right: 4vw;
+
+      @include media-md {
+        margin-right: 20px;
+      }
     }
   }
 }

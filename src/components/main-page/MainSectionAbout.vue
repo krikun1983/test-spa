@@ -17,6 +17,7 @@ export default {};
 <style lang="scss" scoped>
 .main-about {
   max-width: $media-xl;
+  margin: 0 auto;
   height: calc(100vw * 1.06);
   background-image: url("@/assets/img/about_bg.webp");
   background-repeat: no-repeat;
@@ -26,6 +27,9 @@ export default {};
 
   @include media-m {
     height: calc(70vw * 1.06);
+  }
+  @include media-md {
+    height: 320px;
   }
 
   &__layer-color {
@@ -38,6 +42,10 @@ export default {};
       rgba(39, 98, 187, 0) 85.42%
     );
     padding: 0 11%;
+
+    @include media-md {
+      padding: 0 8%;
+    }
   }
 
   &__text {
@@ -53,6 +61,9 @@ export default {};
     @include media-m {
       font-size: 4.5vw;
     }
+    @include media-md {
+      font-size: 24px;
+    }
   }
 
   &__text::before {
@@ -65,6 +76,11 @@ export default {};
     background-image: url("@/assets/img/bracket_left.svg");
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include media-md {
+      top: -12%;
+      left: 2%;
+    }
   }
 
   &__text::after {
@@ -80,6 +96,10 @@ export default {};
 
     @include media-m {
       right: -12%;
+    }
+    @include media-md {
+      bottom: -18%;
+      right: -18%;
     }
   }
 }
