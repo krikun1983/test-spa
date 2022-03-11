@@ -25,12 +25,20 @@ export default {};
 .main-more {
   height: calc(100vw * 1.6);
 
+  @include media-m {
+    height: calc(100vw);
+  }
+
   &__layer-color {
     @include flex-column-between();
     max-width: $media-xl;
     padding: 12% 5% 12%;
     height: 100%;
     background-color: $white;
+
+    @include media-m {
+      padding: 4% 5% 6%;
+    }
   }
 
   &__text {
@@ -39,6 +47,10 @@ export default {};
     font-size: 5.2vw;
     line-height: 1.45;
     letter-spacing: $spacing-l;
+
+    @include media-m {
+      font-size: 3.6vw;
+    }
 
     span {
       font-weight: bold;

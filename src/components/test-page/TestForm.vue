@@ -141,6 +141,7 @@ export default {
     color: $white;
 
     @include media-sm {
+      margin-bottom: 7vw;
       font-size: 5.5vw;
     }
   }
@@ -179,125 +180,54 @@ export default {
 .question_2 {
 }
 .question_3 {
-  // padding-bottom: 22px;
-
-  // .form__heading {
-  //   margin-bottom: 45px;
-  // }
 }
 .question_4 {
-  // padding-bottom: 28px;
-
-  .form__heading {
-    margin-bottom: 14px;
-    //   width: 74%;
-    //   font-size: 20px;
-    //   line-height: 31px;
-  }
-  // .form__list-default {
-  //   margin-bottom: 9px;
-  //   min-height: 40px;
-  // }
-  // label {
-  //   min-height: 40px;
-  // }
 }
 .question_5 {
-  // padding-bottom: 20px;
-
-  // .form__heading {
-  //   margin-bottom: 33px;
-  //   width: 82%;
-  //   font-size: 19px;
-  //   line-height: 23px;
-  // }
 }
 .question_6 {
-  // padding-bottom: 26px;
-
-  // .form__heading {
-  //   margin-bottom: 16px;
-  //   width: 82%;
-  //   font-size: 19px;
-  //   line-height: 23px;
-  // }
 }
 .question_7 {
-  // padding-bottom: 16px;
-
-  // .form__heading {
-  //   margin-bottom: 24px;
-  //   width: 72%;
-  // }
-  // .form__list-default {
-  //   margin-bottom: 9px;
-  //   min-height: 40px;
-  // }
-  // label {
-  //   min-height: 40px;
-  // }
 }
 .question_8 {
-  // padding-bottom: 52px;
-
-  // .form__heading {
-  //   margin-bottom: 26px;
-  //   width: 82%;
-  //   font-size: 18px;
-  //   line-height: 23.85px;
-  // }
-  // .form__list-images {
-  //   padding: 0 36px;
-  // }
-  // .form__img {
-  //   margin-bottom: 14px;
-  // }
 }
 .question_9 {
-  // padding-bottom: 30px;
-
-  // .form__heading {
-  //   font-size: 19px;
-  //   line-height: 25.85px;
-  // }
   .form__list-default {
-    margin-bottom: 19px;
-    min-height: 78px;
+    margin-bottom: 3vw;
 
     input[type="radio"] + label::before {
-      margin-right: 18px;
+      margin-right: 4vw;
     }
   }
-  // label {
-  //   min-height: 78px;
-  // }
 }
 .question_10 {
-  // padding-bottom: 44px;
-
   .form__heading {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 21.2px;
-
     @include media-sm {
-      font-size: 20px;
-      line-height: 24px;
+      margin-bottom: 4vw;
+      font-size: 4.5vw;
     }
   }
   .form__img {
     @include media-sm {
-      width: 50%;
+      width: 40%;
+    }
+  }
+
+  .form__list-default {
+    margin-bottom: 3vw;
+
+    label {
+      @include media-sm {
+        min-height: 12vw;
+      }
+    }
+
+    input[type="radio"] + label::before {
+      margin-right: 4vw;
     }
   }
 }
 .question_11 {
-  // padding-bottom: 38px;
-
-  // .form__heading {
-  //   margin-bottom: 16px;
-  //   width: 76%;
-  // }
   .form__list-images {
     position: relative;
     padding: 0 16px;

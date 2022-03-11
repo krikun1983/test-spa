@@ -51,12 +51,20 @@ export default {
   height: calc(100vw * 1.66);
   font-family: "Merriweather", serif;
 
+  @include media-m {
+    height: calc(100vw);
+  }
+
   &__layer {
     position: relative;
     @include flex-column-between();
     max-width: $media-xl;
     height: 100%;
     padding: 17% 4% 3%;
+
+    @include media-m {
+      padding: 5% 4% 3%;
+    }
 
     .thunder-left {
       position: absolute;
@@ -80,6 +88,10 @@ export default {
     letter-spacing: $spacing-m;
     color: $white;
 
+    @include media-m {
+      font-size: 4vw;
+    }
+
     span {
       color: $accent;
     }
@@ -97,6 +109,11 @@ export default {
     border-radius: 20px;
     background-color: rgba(243, 243, 242, 0.8);
 
+    @include media-m {
+      height: 50vw;
+      font-size: 4vw;
+    }
+
     span {
       font-weight: 700;
     }
@@ -113,6 +130,10 @@ export default {
     color: $white;
     opacity: 50%;
     text-align: center;
+
+    @include media-m {
+      margin-top: 6%;
+    }
 
     span {
       font-size: 3.2vw;

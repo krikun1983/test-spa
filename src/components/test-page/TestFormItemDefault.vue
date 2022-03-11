@@ -60,6 +60,7 @@ export default {
 
     @include media-sm {
       min-height: 14vw;
+      font-size: 5.5vw;
     }
   }
 
@@ -79,6 +80,11 @@ export default {
     flex-grow: 0;
     border: 1px solid $white;
     border-radius: 50%;
+
+    @include media-sm {
+      width: 5vw;
+      height: 5vw;
+    }
   }
 
   input[type="radio"]:checked + label::before {

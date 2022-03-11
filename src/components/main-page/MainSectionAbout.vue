@@ -24,6 +24,10 @@ export default {};
   background-position: center center;
   background-size: cover;
 
+  @include media-m {
+    height: calc(70vw * 1.06);
+  }
+
   &__layer-color {
     @include flex-column-center();
     height: 100%;
@@ -45,6 +49,10 @@ export default {};
     text-align: center;
     letter-spacing: $spacing-m;
     color: $white;
+
+    @include media-m {
+      font-size: 4.5vw;
+    }
   }
 
   &__text::before {
@@ -69,6 +77,10 @@ export default {};
     background-image: url("@/assets/img/bracket_right.svg");
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include media-m {
+      right: -12%;
+    }
   }
 }
 </style>

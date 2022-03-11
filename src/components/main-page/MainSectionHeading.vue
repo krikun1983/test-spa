@@ -43,6 +43,10 @@ export default {};
   min-height: 522px;
   color: $white;
 
+  @include media-m {
+    padding: 4% 5% 4%;
+  }
+
   &__top {
     @include flex-column-center();
 
@@ -54,6 +58,10 @@ export default {};
       line-height: 1.22;
       text-align: center;
       letter-spacing: $spacing-m;
+
+      @include media-m {
+        font-size: 4vw;
+      }
     }
 
     h1 {
@@ -65,6 +73,10 @@ export default {};
       text-transform: uppercase;
       letter-spacing: $spacing-s;
       color: $accent;
+
+      @include media-m {
+        font-size: 6vw;
+      }
     }
   }
 
@@ -77,6 +89,11 @@ export default {};
       right: 2.6vw;
       bottom: 3.2vw;
       width: 54%;
+
+      @include media-m {
+        width: 42%;
+        bottom: 2.2vw;
+      }
     }
   }
 
@@ -91,6 +108,11 @@ export default {};
       line-height: 1.12;
       text-align: center;
       letter-spacing: $spacing-m;
+
+      @include media-m {
+        margin-top: 6%;
+        font-size: 4vw;
+      }
     }
 
     span {
@@ -108,9 +130,18 @@ export default {};
       margin-top: 5%;
       cursor: pointer;
 
+      @include media-m {
+        margin-top: 3%;
+      }
+
       img {
         width: 5vw;
         height: 5vw;
+
+        @include media-m {
+          width: 4vw;
+          height: 4vw;
+        }
       }
 
       span {
@@ -120,6 +151,10 @@ export default {};
         letter-spacing: $spacing-m;
         color: $white;
         text-decoration: none;
+
+        @include media-m {
+          font-size: 2vw;
+        }
       }
     }
   }
