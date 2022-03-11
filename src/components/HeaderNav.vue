@@ -5,29 +5,32 @@
       ($route.name === 'main' || $route.name === 'about') && 'header-fixed',
     ]"
   >
-    <div class="container">
+    <div class="header__container">
       <div class="burger" @click="setIsModalMenu">
         <span class="burger__lines"></span>
       </div>
-      <div :class="[{ hidden: $route.name === 'main' }, 'heading']">
+      <div
+        v-if="$route.name !== 'main' && $route.name !== 'notFoundPage'"
+        class="header__heading"
+      >
         <img
+          class="header__img"
           src="@/assets/img/brain.webp"
-          alt="brain icon"
-          v-if="$route.name !== 'notFoundPage'"
+          alt="brain logo"
         />
-        <h1 v-if="$route.name === 'test/:id'" class="heading__test">
+        <h1 v-if="$route.name === 'test/:id'" class="header__heading-test">
           Тест на определение IQ
         </h1>
-        <h1 v-else-if="$route.name === 'result'" class="heading__result">
+        <h1 v-else-if="$route.name === 'result'" class="header__heading-result">
           Готово!
         </h1>
       </div>
     </div>
-    <nav :class="[{ 'nav-header-show': isModalMenu }, 'nav-header']">
-      <button class="modal-close-btn" @click="setIsModalMenu">
+    <nav :class="['header__nav', { 'header__nav-show': isModalMenu }]">
+      <button class="header__nav_modal-btn" @click="setIsModalMenu">
         <img src="@/assets/img/close-icon.svg" alt="close modal" />
       </button>
-      <ul class="menu-header">
+      <ul class="header__nav-menu">
         <li @click="setIsModalMenu">
           <router-link to="/">Главная</router-link>
         </li>
@@ -69,149 +72,151 @@ export default {
   @include media-m {
     height: 60px;
   }
-}
 
-.header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.burger {
-  cursor: pointer;
-}
-
-.heading {
-  display: flex;
-  align-items: center;
-  margin-left: 48px;
-  max-height: 46px;
-  font-family: "Yeseva One", serif;
-  text-transform: uppercase;
-  color: $accent;
-
-  &__test {
-    margin-left: 9px;
-    font-size: 12px;
-    line-height: 13.86px;
-    font-weight: 400;
-    letter-spacing: $spacing-m;
-  }
-
-  &__result {
-    margin-left: 24px;
-    font-size: 20px;
-    line-height: 23.86px;
-    font-weight: 400;
-    letter-spacing: $spacing-xl;
-  }
-}
-
-.burger__lines {
-  position: absolute;
-  top: 23px;
-  left: 15px;
-  z-index: 4;
-
-  @include media-m {
-    top: 30px;
-    left: 30px;
-  }
-}
-.burger__lines,
-.burger__lines::before,
-.burger__lines::after {
-  position: absolute;
-  width: 24px;
-  height: 2.67px;
-  background-color: #696969;
-
-  @include media-m {
-    width: 30px;
-    height: 3px;
-  }
-}
-
-.burger__lines::before {
-  content: "";
-  top: -7px;
-
-  @include media-m {
-    top: -10px;
-  }
-}
-.burger__lines::after {
-  content: "";
-  top: 7px;
-
-  @include media-m {
-    top: 10px;
-  }
-}
-
-.nav-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 5;
-  min-width: $media-xss-min;
-  min-height: 569px;
-  background-color: $bg-header;
-  transform: translate(-320px);
-  transition: transform 0.3s ease-in;
-
-  .modal-close-btn {
+  &-fixed {
     position: fixed;
-    top: 18px;
-    right: 13px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-
-    @include media-m {
-      top: 22px;
-      right: 22px;
-    }
+    z-index: 15;
   }
 
-  .menu-header {
-    margin: 100px 0 0 23px;
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    max-width: $media-xl;
+    height: 100%;
 
-    li {
-      margin-bottom: 27px;
-    }
-
-    a {
-      display: inline-block;
-      width: 100%;
-      font-family: "Roboto";
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 22px;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $white;
+    .burger {
+      @include flex-center();
+      position: absolute;
+      top: 15px;
+      left: 4%;
+      z-index: 5;
+      width: 24px;
+      height: 20px;
+      cursor: pointer;
 
       @include media-m {
-        font-size: 20px;
-        line-height: 28px;
+        top: 20px;
+        width: 30px;
+      }
+
+      &__lines {
+        position: absolute;
+      }
+      &__lines,
+      &__lines::before,
+      &__lines::after {
+        position: absolute;
+        width: 100%;
+        height: 2.67px;
+        background-color: #696969;
+
+        @include media-m {
+          height: 3px;
+        }
+      }
+
+      &__lines::before {
+        content: "";
+        top: -7px;
+
+        @include media-m {
+          top: -10px;
+        }
+      }
+      &__lines::after {
+        content: "";
+        top: 7px;
+
+        @include media-m {
+          top: 10px;
+        }
       }
     }
-    a.router-link-active {
-      color: $accent;
+  }
+
+  &__heading {
+    @include flex-center();
+    height: 100%;
+    font-family: "Yeseva One", serif;
+    text-transform: uppercase;
+    color: $accent;
+
+    &-test {
+      margin-left: 4%;
+      font-size: 3.6vw;
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: $spacing-m;
+    }
+
+    &-result {
+      margin-left: 8%;
+      padding-right: 16%;
+      font-size: 6vw;
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: $spacing-xl;
     }
   }
-}
 
-.nav-header-show {
-  right: 0;
-  transform: translateX(0);
-}
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 15;
+    min-width: $media-xss-min;
+    min-height: 569px;
+    background-color: $bg-header;
+    transform: translate(-320px);
+    transition: transform 0.3s ease-in;
 
-.hidden {
-  display: none;
+    &_modal-btn {
+      position: fixed;
+      top: 18px;
+      right: 13px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      @include media-m {
+        top: 22px;
+        right: 22px;
+      }
+    }
+
+    &-menu {
+      margin: 100px 0 0 23px;
+
+      li {
+        margin-bottom: 27px;
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+        font-family: "Roboto";
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $white;
+
+        @include media-m {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+      a.router-link-active {
+        color: $accent;
+      }
+    }
+
+    &-show {
+      right: 0;
+      transform: translateX(0);
+    }
+  }
 }
 </style>

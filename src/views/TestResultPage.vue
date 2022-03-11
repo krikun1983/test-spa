@@ -45,12 +45,6 @@
                 <div>
                   Пол: <span>{{ swapi.gender }}</span>
                 </div>
-                <div>
-                  Цвет глаз: <span>{{ swapi.eye_color }}</span>
-                </div>
-                <div>
-                  Цвет волос: <span>{{ swapi.hair_color }}</span>
-                </div>
               </div>
             </transition>
           </div>
@@ -67,9 +61,9 @@
           alt="icon"
         />
       </div>
+      <footer-block />
     </div>
   </main>
-  <footer-block />
 </template>
 
 <script>
@@ -96,14 +90,12 @@ export default {
     startTimer() {
       this.timerInterval = setInterval(() => (this.timer.passed += 1), 1000);
     },
-    selectionApiResource(name, height, mass, gender, eye_color, hair_color) {
+    selectionApiResource(name, height, mass, gender) {
       return {
         name,
         height,
         mass,
         gender,
-        eye_color,
-        hair_color,
       };
     },
     async getApiResource() {
@@ -117,9 +109,7 @@ export default {
           user.name,
           user.height,
           user.mass,
-          user.gender,
-          user.eye_color,
-          user.hair_color
+          user.gender
         );
         clearInterval(this.timerInterval);
       } catch (error) {
@@ -140,13 +130,13 @@ export default {
 
 <style lang="scss" scoped>
 .result-container {
-  min-height: 568px;
+  position: relative;
+  min-height: calc(100vw * 1.65);
   height: 100%;
 
   &__layer {
     position: relative;
     padding-top: 11vw;
-    min-height: 568px;
     height: 100%;
     background-color: $bg-layer;
     font-family: "PT Serif", serif;
@@ -175,6 +165,7 @@ export default {
   @include flex-column-top();
   position: relative;
   z-index: 5;
+  height: 100%;
 
   &__heading-small {
     margin-bottom: 2.5vw;
@@ -268,22 +259,21 @@ export default {
 }
 
 .result__user {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-column-top();
   font-family: "Roboto", sans-serif;
   font-size: 3.5vw;
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: 2px;
+  width: 100%;
+  min-height: 16vw;
 
   &-own {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 30vw;
     row-gap: 1.5vw;
-    column-gap: 1vw;
+    column-gap: 2vw;
     margin-top: 4vw;
-    width: 90%;
 
     span {
       font-weight: bold;
