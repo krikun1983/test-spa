@@ -139,6 +139,10 @@ export default {
     letter-spacing: $spacing-m;
     text-align: center;
     color: $white;
+
+    @include media-sm {
+      font-size: 5.5vw;
+    }
   }
 
   &__list {

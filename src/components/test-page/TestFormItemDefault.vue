@@ -57,6 +57,10 @@ export default {
     line-height: 1.2;
     letter-spacing: $spacing-s;
     color: $white;
+
+    @include media-sm {
+      min-height: 14vw;
+    }
   }
 
   input[type="radio"] {

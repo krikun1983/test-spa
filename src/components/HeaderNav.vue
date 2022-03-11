@@ -14,6 +14,7 @@
         class="header__heading"
       >
         <img
+          @click="$router.push('/')"
           class="header__img"
           src="@/assets/img/brain.webp"
           alt="brain logo"
@@ -131,6 +132,10 @@ export default {
           top: 10px;
         }
       }
+    }
+
+    img {
+      cursor: pointer;
     }
   }
 
