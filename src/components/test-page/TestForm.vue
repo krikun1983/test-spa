@@ -3,12 +3,6 @@
     @submit.prevent
     :class="[
       'form',
-      questionIndex === 2 && 'question_2',
-      questionIndex === 3 && 'question_3',
-      questionIndex === 4 && 'question_4',
-      questionIndex === 5 && 'question_5',
-      questionIndex === 6 && 'question_6',
-      questionIndex === 7 && 'question_7',
       questionIndex === 8 && 'question_8',
       questionIndex === 9 && 'question_9',
       questionIndex === 10 && 'question_10',
@@ -216,18 +210,6 @@ export default {
   }
 }
 
-.question_2 {
-}
-.question_3 {
-}
-.question_4 {
-}
-.question_5 {
-}
-.question_6 {
-}
-.question_7 {
-}
 .question_8 {
   .form__img {
     @include media-m {
@@ -235,6 +217,7 @@ export default {
     }
   }
 }
+
 .question_9 {
   .form__list-default {
     margin-bottom: 3vw;
@@ -252,6 +235,7 @@ export default {
     }
   }
 }
+
 .question_10 {
   .form__heading {
     @include media-sm {
@@ -303,6 +287,7 @@ export default {
     }
   }
 }
+
 .question_11 {
   .form__list-images {
     position: relative;

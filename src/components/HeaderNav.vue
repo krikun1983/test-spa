@@ -200,6 +200,10 @@ export default {
         top: 8vw;
         right: 8vw;
       }
+      @include media-md {
+        top: 100px;
+        right: calc((100vw - $media-xl) / 2);
+      }
     }
 
     &-menu {
@@ -208,9 +212,16 @@ export default {
       @include media-m {
         margin-left: 10vw;
       }
+      @include media-md {
+        margin-left: calc((100vw - $media-xl) / 2);
+      }
 
       li {
         margin-bottom: 8vw;
+
+        @include media-md {
+          margin-bottom: 30px;
+        }
       }
 
       a {
@@ -226,6 +237,9 @@ export default {
 
         @include media-m {
           font-size: 4vw;
+        }
+        @include media-md {
+          font-size: 28px;
         }
       }
       a.router-link-active {
