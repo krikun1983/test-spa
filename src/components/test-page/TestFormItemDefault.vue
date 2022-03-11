@@ -51,7 +51,7 @@ export default {
     @include flex-left();
     width: 100%;
     min-height: 15vw;
-    margin-left: 11%;
+    padding-left: 11%;
     padding-right: 10%;
     font-size: 6vw;
     line-height: 1.2;
