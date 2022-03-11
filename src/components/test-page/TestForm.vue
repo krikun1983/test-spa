@@ -133,7 +133,7 @@ export default {
   }
 
   &__heading {
-    margin-bottom: 10vw;
+    margin-bottom: 6vw;
     width: 86%;
     font-size: 6.5vw;
     line-height: 1.2;
@@ -238,6 +238,8 @@ export default {
 
 .question_10 {
   .form__heading {
+    font-size: 5vw;
+    margin-bottom: 6vw;
     @include media-sm {
       margin-bottom: 4vw;
       font-size: 4.5vw;

@@ -3,8 +3,8 @@
     <h3 class="loader__heading">Обработка результатов</h3>
     <my-loader />
     <p class="loader__text">
-      Определение стиля мышления
-      ...............................................................................
+      Определение стиля мышления...........
+      ........................................................
     </p>
   </div>
 </template>
@@ -44,10 +44,12 @@ export default {};
   }
   &__text {
     margin-top: 8vw;
+    width: 95%;
     padding: 0 10vw;
     font-size: 4.3vw;
     line-height: 1.2;
-    text-align: justify;
+    text-align: center;
+    overflow-x: auto;
     word-wrap: break-word;
 
     @include media-m {

@@ -50,9 +50,9 @@ export default {
   label {
     @include flex-left();
     width: 100%;
-    min-height: 16vw;
+    min-height: 15vw;
     margin-left: 11%;
-    margin-right: 10%;
+    padding-right: 10%;
     font-size: 6vw;
     line-height: 1.2;
     letter-spacing: $spacing-s;
