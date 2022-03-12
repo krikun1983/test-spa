@@ -40,7 +40,7 @@ main {
 }
 
 body {
-  background-image: url("@/assets/img/bg-all.jpg");
+  background-image: url("@/assets/img/bg-all.webp");
   background-repeat: repeat;
   background-color: $bg-images;
 }
