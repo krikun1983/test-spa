@@ -90,6 +90,9 @@ export default {
     startTimer() {
       this.timerInterval = setInterval(() => (this.timer.passed += 1), 1000);
     },
+    removeTimer() {
+      clearInterval(this.timerInterval);
+    },
     selectionApiResource(name, height, mass, gender) {
       return {
         name,
@@ -111,7 +114,7 @@ export default {
           user.mass,
           user.gender
         );
-        clearInterval(this.timerInterval);
+        this.removeTimer();
       } catch (error) {
         console.log(error);
       }
@@ -122,8 +125,11 @@ export default {
   },
   updated() {
     if (this.timer.passed === this.timer.limit) {
-      clearInterval(this.timerInterval);
+      this.removeTimer();
     }
+  },
+  beforeUnmount() {
+    this.removeTimer();
   },
 };
 </script>
